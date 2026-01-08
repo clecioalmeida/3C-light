@@ -1,0 +1,16 @@
+[07-Oct-2021 12:21:38 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'u478097083_3crjh'@'151.106.97.83' (using password: YES) in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/bd_class.php on line 20
+[07-Oct-2021 12:21:38 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/bd_class.php on line 23
+[07-Oct-2021 12:21:38 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/ins_usuario.php on line 7
+[07-Oct-2021 12:21:38 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/ins_usuario.php on line 10
+[07-Oct-2021 12:21:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/ins_usuario.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/ins_usuario.php on line 12
+[07-Oct-2021 12:21:48 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'u478097083_3crjh'@'151.106.97.81' (using password: YES) in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/bd_class.php on line 20
+[07-Oct-2021 12:21:48 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/bd_class.php on line 23
+[07-Oct-2021 12:21:48 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/ins_usuario.php on line 7
+[07-Oct-2021 12:21:48 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/ins_usuario.php on line 10
+[07-Oct-2021 12:21:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/ins_usuario.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/data/empresa/modal/ins_usuario.php on line 12

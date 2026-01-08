@@ -1,0 +1,153 @@
+<?php
+session_start();
+?>
+<?php
+
+if (!isset($_SESSION["id"]) || !isset($_SESSION["usuario"])) {
+
+    header("Location:index.php");
+    exit;
+
+} else {
+
+    $id = $_SESSION["id"];
+    $cod_cli = $_SESSION["cod_cli"];
+}
+
+?>
+<?php
+require_once('bd_class.php');
+$objDb = new db();
+$link = $objDb->conecta_mysql();
+
+$end_ini = explode('-', $_POST['end_ini']);
+$end_fim = explode('-', $_POST['end_fim']);
+
+$glp_ini = $end_ini[0];
+$rua_ini = $end_ini[1];
+$col_ini = $end_ini[2];
+$alt_ini = $end_ini[3];
+
+$glp_fim = $end_fim[0];
+$rua_fim = $end_fim[1];
+$col_fim = $end_fim[2];
+$alt_fim = $end_fim[3];
+
+$sql_local = "select p.cod_estoque, 
+e.cod_estoque,
+e.id as id_etq,
+p.ds_galpao, 
+p.ds_prateleira, 
+p.ds_coluna, 
+p.ds_altura, 
+p.produto,
+m.nm_produto,
+a.nome
+from tb_posicao_pallet p
+left join tb_etiqueta e on p.cod_estoque = e.cod_estoque
+left join tb_produto m on p.produto = m.cod_prod_cliente
+left join tb_armazem a on p.ds_galpao = a.id
+where p.fl_status = 'A' and coalesce(p.cod_estoque,0) > 0 and p.fl_empresa = '$cod_cli' and p.nr_qtde > 0 and (p.ds_galpao >= '$glp_ini' and p.ds_galpao <= '$glp_fim') and (p.ds_prateleira >= '$rua_ini' and p.ds_prateleira <= '$rua_fim') and (p.ds_coluna >= '$col_ini' and p.ds_coluna <= '$col_fim') and (p.ds_altura >= '$alt_ini' and p.ds_altura <= '$alt_fim')
+group by p.cod_estoque
+order by p.ds_galpao, p.ds_prateleira, p.ds_coluna, p.ds_altura, p.produto";
+$res_local = mysqli_query($link,$sql_local);
+$tr_local = mysqli_num_rows($res_local);
+
+$link->close();
+?>
+<?php
+if($tr_local){?>
+
+    <div class="col-sm-12 text-align-right">
+        <div class="btn-group">
+            <button type="submit" class="btn btn-success" id="RepEstoqGenExcel" style="float:right;width: 100px">Excel</button>
+        </div>
+    </div>
+    <div id="reportSalEstoque">
+        <div class="padding-10">
+            <div class="pull-left">
+                <img src="../../../img/logo3c2.png" width="80" height="32" alt="Argus">
+                <address>
+                    <br>
+                    <strong>3C Services</strong>
+                </address>
+            </div>
+            <div class="pull-right" style="width: 400px">
+                <h1 class="font-200">Relatório produtos para inventário</h1>
+                <p><strong>ATENÇÃO:</strong> <h5>O arquivo excel gerado pode ser editado contanto que não se altere a ordem das colunas. Caso contrário a importação não funcionará.</h5></p>
+            </div>
+            <div class="clearfix"></div>
+            <br>
+            <br>
+            <table class="table table-striped table-hover" id="" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th> Cód. Estoque </th>
+                        <th> Cód. Etiqueta </th>
+                        <th> Nome </th>
+                        <th> Galpão </th>
+                        <th> Rua </th>
+                        <th> Coluna</th>
+                        <th> Altura </th>
+                        <th> Cód. SAP</th>
+                        <th> Produto </th>
+                        <th> Primeira contagem </th>
+                        <th> Segunda contagem </th>
+                        <th> Terceira contagem </th>
+                        <th> Validade </th>
+                        <th> CA </th>
+                        <th> Validade CA </th>
+                        <th> Laudo </th>
+                        <th> Validade Laudo </th>
+                        <th> Data inventário </th>
+                        <th> Inventariante </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    while($dados_local = mysqli_fetch_assoc($res_local)) {
+                        ?>
+                        <tr class="odd gradeX">
+                            <td style="text-align: center; width: 5px;"><?php echo $dados_local['cod_estoque']; ?> </td>
+                            <td style="text-align: center; width: 5px;"><?php echo $dados_local['id_etq']; ?> </td>
+                            <td style="text-align: center; width: 50px;"><?php echo $dados_local['nome']; ?> </td>
+                            <td style="text-align: center; width: 5px;"><?php echo $dados_local['ds_galpao']; ?> </td>
+                            <td style="text-align: center; width: 5px;"><?php echo $dados_local['ds_prateleira']; ?> </td>
+                            <td style="text-align: center; width: 5px"> <?php echo $dados_local['ds_coluna']; ?> </td>
+                            <td style="text-align: center; width: 5px"> <?php echo $dados_local['ds_altura']; ?> </td>
+                            <td style="text-align: right; width: 5px"> <?php echo $dados_local['produto']; ?></td>
+                            <td style="text-align: left; width: auto"> <?php echo $dados_local['nm_produto']; ?></td>
+                            <td style="width: 50px"></td>
+                            <td style="width: 50px"></td>
+                            <td style="width: 50px"></td>
+                            <td style="width: 50px"></td>
+                            <td style="width: 50px"></td>
+                            <td style="width: 50px"></td>
+                            <td style="width: 50px"></td>
+                            <td style="width: 50px"></td>
+                            <td style="width: 50px"></td>
+                            <td style="width: 50px"></td>
+                        </tr>              
+                    <?php } ?> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('#RepEstoqGenExcel').on('click', function(){
+            event.preventDefault();
+            $('#RepEstoqGenExcel').prop("disabled", true);
+            var today = new Date();
+            $("#reportSalEstoque").table2excel({
+                exclude: ".noExl",
+                name: "Relatório posições com saldo para inventário",
+                filename: "Relatório posições com saldo para inventário " + today});
+            $('#RepEstoqGenExcel').prop("disabled", false);
+
+        });
+    </script>
+<?php }else{?>
+
+    <h4>Nao foram encontrados produtos com esta descrição.</h4>
+
+    <?php }?>

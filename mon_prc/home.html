@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en" class="smart-style-0">
+
+<head>
+    <title>Monitoramento 3C Argus</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,500,700">
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" media="screen, print" href="assets/vendors/vendors.bundle.css">
+    <link rel="stylesheet" media="screen, print" href="assets/app/app.bundle.css">
+
+</head>
+
+<body class="smart-style-1">
+    <div class="sa-wrapper">
+        <div class="sa-page-body" id="load_pages">
+            <div class="sa-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark form-group">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item" aria-disabled="true">
+                                <div class="flex-row d-flex align-items-center h-100">
+                                    <a class="sa-logo-link" href="" title="3C Services" aria-disabled="true"><img
+                                            alt="3C Services" src="assets/img/logo2.png" class="sa-logo"
+                                            style="width: 100%;"></a>
+                                </div>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="home.html" id="">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="recebimento.html" id="load_list_rec">Recebimentos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="load_list_exp">Expedição</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="estoque.html">Estoque</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+
+                        </form>
+                    </div>
+                </nav>
+                <div class="sa-content">
+                    <div class="w-100">
+                        <div class="row">
+                            <article class="col-md-12">
+                                <div class="alert alert-block alert-info">
+                                    <h4 class="alert-heading">Recebimento</h4>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div>
+                                    <div class="highchart-container3"></div>
+                                    <table class="highchart3 table table-hover table-bordered"
+                                        data-graph-container=".. .. .highchart-container3" data-graph-type="column" data-graph-datalabels-enabled="1" data-graph-datalabels-formatter="veic.veic_rec"
+                                        style="display:none">
+                                        <caption>Total de veículos recebidos</caption>
+                                        <thead>
+                                            <tr>
+                                                <th>Mês</th>
+                                                <th class="">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tb_veic">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div>
+                                    <div class="highchart-container2"></div>
+                                    <table class="highchart table table-hover table-bordered"
+                                        data-graph-container=".. .. .highchart-container2" data-graph-type="column" data-graph-datalabels-enabled="1" data-graph-datalabels-formatter="umb.umb_rec"
+                                        style="display:none">
+                                        <caption>Total recebido por UMB</caption>
+                                        <thead id="ln_umb">
+
+                                        </thead>
+                                        <tbody id="tb_umb">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div>
+                                    <div class="highchart-container1"></div>
+                                    <table class="highchart1 table table-hover table-bordered"
+                                        data-graph-container=".. .. .highchart-container1" data-graph-type="column" data-graph-type="column" data-graph-datalabels-enabled="1" data-graph-datalabels-formatter="kva.kva_rec"
+                                        style="display:none">
+                                        <caption>Total recebido por Kva</caption>
+                                        <thead id="ln_kva">
+
+                                        </thead>
+                                        <tbody id="tb_kva">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <article class="col-md-12">
+                            <div class="alert alert-block alert-info">
+                                <h4 class="alert-heading">Seriais</h4>
+                            </div>
+                        </article>
+                        <article class="col-md-4">
+                            <div>
+                                <div class="highchart-container4"></div>
+                                <table class="highchart4 table table-hover table-bordered"
+                                    data-graph-container=".. .. .highchart-container4" data-graph-type="column" data-graph-type="column" data-graph-datalabels-enabled="1" data-graph-datalabels-formatter="col.col_rec"
+                                    style="display:none">
+                                    <caption>Total de seriais coletados</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Mês</th>
+                                            <th class="">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_ser">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ret_md"></div>
+    <div id="ret_md_vc"></div>
+    <script src="assets/vendors/vendors.bundle.js"></script>
+    <script src="assets/app/app.bundle.js"></script>
+    <script src="assets/js/home.js"></script>
+    <script src="assets/js/agenda.js"></script>
+    <script src="assets/js/conf_ag.js"></script>
+    <script src="assets/js/chart_veic_rec.js"></script>
+    <script src="assets/js/chart_umb_rec.js"></script>
+    <script src="assets/js/chart_kva_rec.js"></script>
+    <script src="assets/js/chart_col_ser.js"></script>
+
+
+</body>
+
+</html>

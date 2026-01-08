@@ -1,0 +1,36 @@
+<div class="modal fade bd-example-modal-lg" id="list_file" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="retPdf">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/list_file.js"></script>
+<script src="assets/js/del_file.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#list_file').modal('show');
+    });
+</script>

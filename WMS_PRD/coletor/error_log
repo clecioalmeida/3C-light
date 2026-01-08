@@ -1,0 +1,179 @@
+[02-Mar-2022 14:11:20 America/Sao_Paulo] PHP Notice:  Undefined index: cod_prd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 25
+[02-Mar-2022 14:11:20 America/Sao_Paulo] PHP Notice:  Undefined index: rua in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 26
+[02-Mar-2022 14:11:20 America/Sao_Paulo] PHP Notice:  Undefined index: col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 27
+[02-Mar-2022 14:11:20 America/Sao_Paulo] PHP Notice:  Undefined index: alt in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 28
+[02-Mar-2022 14:11:20 America/Sao_Paulo] PHP Notice:  Undefined index: qtd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 29
+[02-Mar-2022 14:11:20 America/Sao_Paulo] PHP Notice:  Undefined index: galpao in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 30
+[02-Mar-2022 14:11:20 America/Sao_Paulo] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 31
+[03-Mar-2022 14:43:16 UTC] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inventario_ag.php on line 29
+[04-Mar-2022 12:07:27 UTC] PHP Notice:  Undefined index: nrInvConf in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inv_transf.php on line 13
+[07-Mar-2022 12:00:41 UTC] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inventario_ag.php on line 29
+[07-Mar-2022 17:10:15 UTC] PHP Warning:  Packets out of order. Expected 0 received 1. Packet size=68 in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 20
+[07-Mar-2022 17:10:15 UTC] PHP Warning:  mysqli_connect(): MySQL server has gone away in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 20
+[07-Mar-2022 17:10:15 UTC] PHP Warning:  mysqli_connect(): Error while reading greeting packet. PID=5725 in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 20
+[07-Mar-2022 17:10:15 UTC] PHP Warning:  mysqli_connect(): (HY000/2006): MySQL server has gone away in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 20
+[07-Mar-2022 17:10:15 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 23
+[07-Mar-2022 17:10:15 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/aloc_item.php on line 25
+[07-Mar-2022 17:10:15 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/aloc_item.php on line 26
+[07-Mar-2022 17:10:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/coletor/aloc_item.php:104
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/coletor/aloc_item.php on line 104
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: cod_prd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 25
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: rua in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 26
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 27
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: alt in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 28
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: qtd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 29
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: galpao in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 30
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 31
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: cod_estoque in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 32
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: cod_col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 33
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: id_etq in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 34
+[09-Mar-2022 11:09:48 America/Sao_Paulo] PHP Notice:  Undefined index: nr_qtde in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 35
+[11-Mar-2022 13:40:32 UTC] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inventario_ag.php on line 29
+[14-Mar-2022 16:46:38 UTC] PHP Notice:  Undefined index: cod_rec in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_aloc.php on line 7
+[14-Mar-2022 19:10:52 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/picking_serial_cego.php on line 25
+[14-Mar-2022 19:10:52 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/picking_serial_cego.php on line 54
+[15-Mar-2022 16:16:58 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/picking_serial_cego.php on line 25
+[15-Mar-2022 16:16:58 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/picking_serial_cego.php on line 54
+[18-Mar-2022 13:53:32 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/expede_ck.php on line 32
+[18-Mar-2022 13:53:32 America/Sao_Paulo] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/expede_ck.php on line 61
+[18-Mar-2022 14:29:27 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/expede_ck.php on line 32
+[18-Mar-2022 14:29:27 America/Sao_Paulo] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/expede_ck.php on line 61
+[30-Mar-2022 11:25:44 UTC] PHP Notice:  Undefined index: nrInvConf in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inv_transf.php on line 13
+[19-Apr-2022 10:16:00 America/Sao_Paulo] PHP Notice:  Undefined index: cod_prd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 25
+[19-Apr-2022 10:16:00 America/Sao_Paulo] PHP Notice:  Undefined index: rua in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 26
+[19-Apr-2022 10:16:00 America/Sao_Paulo] PHP Notice:  Undefined index: col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 27
+[19-Apr-2022 10:16:00 America/Sao_Paulo] PHP Notice:  Undefined index: alt in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 28
+[19-Apr-2022 10:16:00 America/Sao_Paulo] PHP Notice:  Undefined index: qtd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 29
+[19-Apr-2022 10:16:00 America/Sao_Paulo] PHP Notice:  Undefined index: galpao in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 30
+[19-Apr-2022 10:16:00 America/Sao_Paulo] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 31
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: cod_prd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 25
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: rua in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 26
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 27
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: alt in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 28
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: qtd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 29
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: galpao in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 30
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 31
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: cod_estoque in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 32
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: cod_col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 33
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: id_etq in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 34
+[19-Apr-2022 14:07:47 America/Sao_Paulo] PHP Notice:  Undefined index: nr_qtde in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 35
+[20-Apr-2022 11:44:19 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 19
+[20-Apr-2022 11:44:19 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 28
+[20-Apr-2022 11:44:19 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 60
+[20-Apr-2022 11:44:19 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 72
+[20-Apr-2022 11:44:19 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 75
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  Packets out of order. Expected 0 received 1. Packet size=68 in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 20
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_connect(): MySQL server has gone away in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 20
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_connect(): Error while reading greeting packet. PID=15432 in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 20
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/2006): MySQL server has gone away in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 20
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 23
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 42
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 43
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 50
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 51
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 56
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 57
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 64
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 65
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Notice:  Undefined variable: produto in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 78
+[27-Apr-2022 12:22:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php:170
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 170
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: cod_prd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 25
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: rua in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 26
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 27
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: alt in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 28
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: qtd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 29
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: galpao in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 30
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 31
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: cod_estoque in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 32
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: cod_col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 33
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: id_etq in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 34
+[03-May-2022 13:43:25 America/Sao_Paulo] PHP Notice:  Undefined index: nr_qtde in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 35
+[04-May-2022 12:45:33 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 19
+[04-May-2022 12:45:33 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 28
+[04-May-2022 12:45:33 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 60
+[04-May-2022 12:45:33 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 72
+[04-May-2022 12:45:33 UTC] PHP Notice:  Undefined variable: cod_recebimento in /home/u478097083/public_html/3crj/WMS_PRD/coletor/rec_item_or.php on line 75
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: cod_prd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 25
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: rua in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 26
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 27
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: alt in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 28
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: qtd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 29
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: galpao in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 30
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 31
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: cod_estoque in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 32
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: cod_col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 33
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: id_etq in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 34
+[04-May-2022 11:00:19 America/Sao_Paulo] PHP Notice:  Undefined index: nr_qtde in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 35
+[06-May-2022 11:20:01 UTC] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inventario_ag.php on line 29
+[06-May-2022 11:25:11 UTC] PHP Notice:  Undefined index: nrInvConf in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inv_transf.php on line 13
+[06-May-2022 11:28:05 UTC] PHP Notice:  Undefined index: nrInvConf in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inv_transf.php on line 13
+[06-May-2022 11:28:28 UTC] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inventario_ag.php on line 29
+[06-May-2022 11:28:55 UTC] PHP Notice:  Undefined index: nrInvConf in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inv_transf.php on line 13
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: cod_prd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 25
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: rua in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 26
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 27
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: alt in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 28
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: qtd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 29
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: galpao in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 30
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 31
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: cod_estoque in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 32
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: cod_col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 33
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: id_etq in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 34
+[09-May-2022 13:45:26 America/Sao_Paulo] PHP Notice:  Undefined index: nr_qtde in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 35
+[12-May-2022 19:24:04 UTC] PHP Notice:  Undefined index: nrInvConf in /home/u478097083/public_html/3crj/WMS_PRD/coletor/inv_transf.php on line 13
+[24-May-2022 11:58:51 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection refused in /home/u478097083/public_html/3crj/WMS_PRD/coletor/data/bd_class.php on line 20
+[24-May-2022 11:58:51 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/data/bd_class.php on line 23
+[24-May-2022 11:58:51 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 24
+[24-May-2022 11:58:51 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 25
+[24-May-2022 11:58:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 27
+[24-May-2022 11:58:55 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection refused in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 20
+[24-May-2022 11:58:55 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/xhr/bd_class.php on line 23
+[24-May-2022 11:58:55 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/aloc_item.php on line 25
+[24-May-2022 11:58:55 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/aloc_item.php on line 26
+[24-May-2022 11:58:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/coletor/aloc_item.php:104
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/coletor/aloc_item.php on line 104
+[24-May-2022 11:59:04 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection refused in /home/u478097083/public_html/3crj/WMS_PRD/coletor/data/bd_class.php on line 20
+[24-May-2022 11:59:04 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/data/bd_class.php on line 23
+[24-May-2022 11:59:04 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 24
+[24-May-2022 11:59:04 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 25
+[24-May-2022 11:59:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 27
+[24-May-2022 11:59:07 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection refused in /home/u478097083/public_html/3crj/WMS_PRD/coletor/data/bd_class.php on line 20
+[24-May-2022 11:59:07 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/data/bd_class.php on line 23
+[24-May-2022 11:59:07 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 24
+[24-May-2022 11:59:07 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 25
+[24-May-2022 11:59:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 27
+[24-May-2022 11:59:12 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection refused in /home/u478097083/public_html/3crj/WMS_PRD/coletor/data/bd_class.php on line 20
+[24-May-2022 11:59:12 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/data/bd_class.php on line 23
+[24-May-2022 11:59:12 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 24
+[24-May-2022 11:59:12 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 25
+[24-May-2022 11:59:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/coletor/alocacao.php on line 27
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: cod_prd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 25
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: rua in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 26
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 27
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: alt in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 28
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: qtd in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 29
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: galpao in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 30
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: cod_ped in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 31
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: cod_estoque in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 32
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: cod_col in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 33
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: id_etq in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 34
+[25-May-2022 10:56:49 America/Sao_Paulo] PHP Notice:  Undefined index: nr_qtde in /home/u478097083/public_html/3crj/WMS_PRD/coletor/conf_cego_piloto.php on line 35

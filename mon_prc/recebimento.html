@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en" class="smart-style-0">
+
+<head>
+	<title>Monitoramento 3C Argus</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,500,700">
+	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" media="screen, print" href="assets/vendors/vendors.bundle.css">
+	<link rel="stylesheet" media="screen, print" href="assets/app/app.bundle.css">
+
+</head>
+<div class="sa-page-body" id="load_pages">
+	<div class="sa-content-wrapper">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark form-group">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item" aria-disabled="true">
+						<div class="flex-row d-flex align-items-center h-100">
+							<a class="sa-logo-link" href="" title="3C Services" aria-disabled="true"><img
+									alt="3C Services" src="assets/img/logo2.png" class="sa-logo"
+									style="width: 100%;"></a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="home.html" id="">Home</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="recebimento.html" id="load_list_rec">Recebimentos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" id="load_list_exp">Expedição</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="estoque.html">Estoque</a>
+					</li>
+				</ul>
+				<!--form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" id="nm_for" type="text" placeholder="FORNECEDOR">
+					<button class="btn btn-outline-light my-2 my-sm-0" id="pesq_for" type="submit">Buscar</button>
+					&nbsp;
+					<input class="form-control mr-sm-2" id="dt_ini_ag" type="date">
+					<input class="form-control mr-sm-2" id="dt_fim_ag" type="date">
+					<button class="btn btn-outline-light my-2 my-sm-0" id="pesq_dt" type="submit">Buscar</button>
+					&nbsp;
+					<input class="form-control mr-sm-2" id="nm_for" type="text" placeholder="FABRICANTE">
+					<button class="btn btn-outline-light my-2 my-sm-0" id="pesq_fabr" type="submit">Buscar</button>
+				</form-->
+			</div>
+		</nav>
+		<div class="sa-content">
+			<div class="w-100">
+				<div class="row">
+					<article class="col-sm-12 col-md-12 col-lg-12">
+
+						<div class="jarviswidget well no-padding" id="wid-id-0">
+							<header>
+								<div class="widget-header">
+									<span class="widget-icon"> <i class="fa fa-comments"></i> </span>
+									<h2></h2>
+								</div>
+							</header>
+							<div>
+								<div class="jarviswidget-editbox">
+									<input class="form-control" type="text">
+								</div>
+								<div class="widget-body p-0">
+
+									<table id="tb_rec"
+										class="display projects-table table table-striped table-bordered table-hover"
+										cellspacing="0" width="100%">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Cod. recebimento</th>
+												<th>Data</th>
+												<th>Fornecedor</th>
+												<th>Veículo</th>
+												<th>Motorista</th>
+												<th>Quantidade</th>
+												<th>LP</th>
+												<th>KVA</th>
+												<th>Serial</th>
+												<th>Fabricante</th>
+												<th>Ano</th>
+												<th>Enrolamento</th>
+												<th>Observação</th>
+												<th>Situação</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="assets/vendors/vendors.bundle.js"></script>
+<script src="assets/app/app.bundle.js"></script>
+<script src="assets/js/links.js"></script>
+<script src="assets/js/recebe.js"></script>
+<script src="assets/js/list_ag_dt.js"></script>
+<script src="assets/js/list_file.js"></script>
+</body>
+
+</html>

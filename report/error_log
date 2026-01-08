@@ -1,0 +1,38 @@
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(data/movimento/chart.php): failed to open stream: No such file or directory in /home/u478097083/public_html/3crj/report/home.php on line 1
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(data/movimento/chart.php): failed to open stream: No such file or directory in /home/u478097083/public_html/3crj/report/home.php on line 1
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(): Failed opening 'data/movimento/chart.php' for inclusion (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u478097083/public_html/3crj/report/home.php on line 1
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/u478097083/public_html/3crj/report/home.php on line 53
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/u478097083/public_html/3crj/report/home.php on line 53
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u478097083/public_html/3crj/report/home.php on line 53
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(menu.php): failed to open stream: No such file or directory in /home/u478097083/public_html/3crj/report/home.php on line 56
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(menu.php): failed to open stream: No such file or directory in /home/u478097083/public_html/3crj/report/home.php on line 56
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(): Failed opening 'menu.php' for inclusion (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u478097083/public_html/3crj/report/home.php on line 56
+[20-Oct-2021 21:52:22 UTC] PHP Notice:  Undefined variable: tempo_b in /home/u478097083/public_html/3crj/report/home.php on line 146
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/report/home.php on line 146
+[20-Oct-2021 21:52:22 UTC] PHP Notice:  Undefined variable: tempo_c in /home/u478097083/public_html/3crj/report/home.php on line 158
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/report/home.php on line 158
+[20-Oct-2021 21:52:22 UTC] PHP Notice:  Undefined variable: tempo_a in /home/u478097083/public_html/3crj/report/home.php on line 170
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/report/home.php on line 170
+[20-Oct-2021 21:52:22 UTC] PHP Notice:  Undefined variable: res_status in /home/u478097083/public_html/3crj/report/home.php on line 186
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/report/home.php on line 186
+[20-Oct-2021 21:52:22 UTC] PHP Notice:  Undefined variable: rec_a in /home/u478097083/public_html/3crj/report/home.php on line 260
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/report/home.php on line 260
+[20-Oct-2021 21:52:22 UTC] PHP Notice:  Undefined variable: rec_b in /home/u478097083/public_html/3crj/report/home.php on line 272
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/report/home.php on line 272
+[20-Oct-2021 21:52:22 UTC] PHP Notice:  Undefined variable: res_status_rec in /home/u478097083/public_html/3crj/report/home.php on line 288
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/report/home.php on line 288
+[20-Oct-2021 21:52:22 UTC] PHP Notice:  Undefined variable: ped_media_a in /home/u478097083/public_html/3crj/report/home.php on line 362
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/report/home.php on line 362
+[20-Oct-2021 21:52:22 UTC] PHP Notice:  Undefined variable: ped_media_b in /home/u478097083/public_html/3crj/report/home.php on line 374
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u478097083/public_html/3crj/report/home.php on line 374
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(script.php): failed to open stream: No such file or directory in /home/u478097083/public_html/3crj/report/home.php on line 604
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(script.php): failed to open stream: No such file or directory in /home/u478097083/public_html/3crj/report/home.php on line 604
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  include(): Failed opening 'script.php' for inclusion (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u478097083/public_html/3crj/report/home.php on line 604
+[20-Oct-2021 21:52:22 UTC] PHP Warning:  require_once(data/movimento/bd_class.php): failed to open stream: No such file or directory in /home/u478097083/public_html/3crj/report/home.php on line 613
+[20-Oct-2021 21:52:22 UTC] PHP Fatal error:  require_once(): Failed opening required 'data/movimento/bd_class.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u478097083/public_html/3crj/report/home.php on line 613
+[21-Oct-2021 09:29:58 America/Sao_Paulo] PHP Notice:  Undefined offset: 1 in /home/u478097083/public_html/3crj/report/chart_item_cr.php on line 30
+[21-Oct-2021 09:29:58 America/Sao_Paulo] PHP Notice:  Undefined offset: 1 in /home/u478097083/public_html/3crj/report/chart_item_cr.php on line 30
+[21-Oct-2021 09:30:26 America/Sao_Paulo] PHP Notice:  Undefined offset: 1 in /home/u478097083/public_html/3crj/report/chart_item_cr.php on line 30
+[21-Oct-2021 09:30:26 America/Sao_Paulo] PHP Notice:  Undefined offset: 1 in /home/u478097083/public_html/3crj/report/chart_item_cr.php on line 30
+[21-Oct-2021 09:30:38 America/Sao_Paulo] PHP Notice:  Undefined offset: 1 in /home/u478097083/public_html/3crj/report/chart_item_cr.php on line 30
+[21-Oct-2021 09:30:38 America/Sao_Paulo] PHP Notice:  Undefined offset: 1 in /home/u478097083/public_html/3crj/report/chart_item_cr.php on line 30

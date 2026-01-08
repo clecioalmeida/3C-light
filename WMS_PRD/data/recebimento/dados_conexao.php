@@ -1,0 +1,27 @@
+<?php 
+ 
+ define('HOST', '109.106.251.202');  
+ define('DBNAME', 'u478097083_3cLgtRjP');  
+ define('CHARSET', 'utf8');  
+ define('USER', 'u478097083_3cLgtRj');  
+ define('PASSWORD', '3cLight22#');  
+
+ class Conexao {  
+
+   private static $pdo;
+
+   private function __construct() {  
+    
+   } 
+   public static function getInstance() {  
+     if (!isset(self::$pdo)) {  
+       try {  
+         $opcoes = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8', PDO::ATTR_PERSISTENT => TRUE);  
+         self::$pdo = new PDO("mysql:host=" . HOST . "; dbname=" . DBNAME . "; charset=" . CHARSET . ";", USER, PASSWORD, $opcoes);  
+       } catch (PDOException $e) {  
+         print "Erro: " . $e->getMessage();  
+       }  
+     }  
+     return self::$pdo;  
+   }  
+ }

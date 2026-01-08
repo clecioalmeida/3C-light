@@ -1,0 +1,76 @@
+<?php
+
+$id = 2;
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Moros - Confirmação de entregas</title>
+	<link rel="shortcut icon" href="_assets/img/moros_logo.png"">
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" class="jqm-demos jqm-home">
+	<div data-role="header" class="jqm-header" style="background-color: #0000CD">
+		<h2><img src="_assets/img/moros.png" alt="jQuery Mobile" style="width: 50px;height: 50px"></h2>
+	</div><!-- /header -->
+	<div role="main" class="ui-content jqm-content">
+		<h4 style="color: black">Entregas</h4>
+		<div data-demo-html="true" data-demo-css="#collapsible-list-item-style-flat">
+		    <ul data-role="listview">
+		      <li data-role="collapsible" data-iconpos="right" data-inset="false">
+		        <h3 style="font-size: 12px">Entrega 1</h3>
+		        <ul data-theme="a">
+		          <p>Condor</p>
+		          <p>Eagle</p>
+		          <p>Sparrow</p>
+		          <button class="ui-btn ui-btn-inline">Confirmar</button>
+		          <button class="ui-btn ui-btn-inline">Ocorrência</button>
+		        </ul>
+		      </li>
+		      <li>
+		    </ul>
+		</div>		
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+		<p>Growup Soluções para logística</p>
+		<p>Copyright 2018 - Growup</p>
+	</div><!-- /footer -->
+	<!-- TODO: This should become an external panel so we can add input to markup (unique ID) -->
+</div><!-- /page -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var id = "<?php echo $id; ?>";
+		$.ajax
+		({
+		    url:"xhr/fin_conf_pedido.php",
+		    method: "POST",
+		    dataType:'json',
+		    data:{pedido:pedido},
+		    success:function(j){
+				for(var i=0;i < j.length;i++){
+					var info = j[i].info;
+					if(info == 1){
+					    $('#retExpEnd1').show();
+						$('#retExpEnd1').html("Pedido finalizado com sucesso!");
+
+					}else{
+						$('#retExpEnd2').show();
+						$('#retExpEnd2').html(info);
+
+					}
+				}
+			}
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en" class="smart-style-0">
+
+<head>
+    <title>Monitoramento 3C Argus</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,500,700">
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" media="screen, print" href="assets/vendors/vendors.bundle.css">
+    <link rel="stylesheet" media="screen, print" href="assets/app/app.bundle.css">
+
+</head>
+<div class="sa-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark form-group">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+				<li class="nav-item" aria-disabled="true">
+						<div class="flex-row d-flex align-items-center h-100">
+							<a class="sa-logo-link" href="" title="3C Services" aria-disabled="true"><img alt="3C Services"
+									src="assets/img/logo2.png" class="sa-logo" style="width: 100%;"></a>
+						</div>
+				</li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" id="load_list_dash">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="load_list_rec">Recebimentos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="load_list_exp">Expedição</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Estoque</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" id="nm_for" type="text" placeholder="FORNECEDOR">
+                <button class="btn btn-outline-light my-2 my-sm-0" id="pesq_for" type="submit">Buscar</button>
+                &nbsp;
+                <input class="form-control mr-sm-2" id="dt_ini_ag" type="date">
+                <input class="form-control mr-sm-2" id="dt_fim_ag" type="date">
+                <button class="btn btn-outline-light my-2 my-sm-0" id="pesq_dt" type="submit">Buscar</button>
+                &nbsp;
+                <input class="form-control mr-sm-2" id="nm_for" type="text" placeholder="FABRICANTE">
+                <button class="btn btn-outline-light my-2 my-sm-0" id="pesq_fabr" type="submit">Buscar</button>
+                <!--button class="btn btn-outline-light my-2 my-sm-0" id="ins_ag" type="submit">Novo
+								agendamento</button-->
+            </form>
+        </div>
+    </nav>
+    <div class="sa-content">
+        <div class="w-100">
+            <div class="row">
+                <article class="col-md-12">
+                    <div class="alert alert-block alert-info">
+                        <h4 class="alert-heading">Recebimento</h4>
+                    </div>
+                </article>
+                <article class="col-md-4">
+                    <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false"
+                        data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+                        data-widget-sortable="false">
+                        <header>
+
+                            <div class="widget-header">
+                                <h2>Total de veículos recebidos</h2>
+                            </div>
+
+                        </header>
+
+                        <div>
+
+                            <div class="jarviswidget-editbox">
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="widget-body">
+
+                                <canvas id="ChartVeicRec" height="120"></canvas>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </article>
+                <article class="col-md-4">
+                    <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false"
+                        data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+                        data-widget-sortable="false">
+                        <header>
+
+                            <div class="widget-header">
+                                <h2>Total recebido por UMB</h2>
+                            </div>
+
+                        </header>
+
+                        <div>
+
+                            <div class="jarviswidget-editbox">
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="widget-body">
+
+                                <canvas id="ChartUmbRec" height="120"></canvas>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="col-md-4">
+                    <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false"
+                        data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+                        data-widget-sortable="false">
+                        <header>
+
+                            <div class="widget-header">
+                                <h2>Total recebido por KVA</h2>
+                            </div>
+
+                        </header>
+
+                        <div>
+
+                            <div class="jarviswidget-editbox">
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="widget-body">
+
+                                <canvas id="ChartKvaRec" height="120"></canvas>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/vendors/vendors.bundle.js"></script>
+<script src="assets/app/app.bundle.js"></script>
+<script src="assets/js/links.js"></script>
+<script src="assets/js/chart_veic_rec.js"></script>
+<script src="assets/js/chart_umb_rec.js"></script>
+</body>
+
+</html>

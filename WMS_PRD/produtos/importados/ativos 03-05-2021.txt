@@ -1,0 +1,116 @@
+Matricula	Nome	Departamento	Cargo
+821	Herbert Savio Pontes	2300 - Gestão Operacional CE	Assistente de Gestão VII
+872	Regiane Aguiar da Silva	2302 - Laboratório Perícia	Coordenador Tecnico IV
+873	Jose Jakson Nelio Soares	2301 - Serviços Coelce	Técnico em Serviços
+912	Laercio Gadelha de Goes	2302 - Laboratório Perícia	Técnico em Serviços
+918	Weslley Lino Marques	2301 - Serviços Coelce	Coordenador Técnico II
+942	Juliana Graca Gondim Lima	2003 - Apoio Operacional Ce	Coordenador de Apoio
+943	Solange Freitas de Souza	2301 - Serviços Coelce	Técnico em Serviços
+948	Ana Marcia Moreira Lopes	2003 - Apoio Operacional Ce	Auxiliar de Apoio Operacional III
+957	Juvanildo Pinheiro Alexandre	2301 - Serviços Coelce	Técnico em Serviços
+959	Raimundo Ednardo Melo	2301 - Serviços Coelce	Técnico em Serviços
+964	Antonio Silva de Sousa	2301 - Serviços Coelce	Técnico em Serviços
+968	Washington Luiz de Oliveira	2302 - Laboratório Perícia	Técnico em Serviços
+969	Josafa Sampaio Freitas	2301 - Serviços Coelce	Técnico em Serviços
+970	Francisco Jose Bezerra Junior	2301 - Serviços Coelce	Técnico em Serviços
+981	Monica de Lima Queiroz Macedo	2301 - Serviços Coelce	Coordenador técnico I
+986	Antonio David Pereira Silva	2301 - Serviços Coelce	Técnico em Serviços
+992	Francisco Sergio Rodrigues dos Santos	2301 - Serviços Coelce	Auxiliar Operacional II
+994	Francisco Tiago Felix de Oliveira	2301 - Serviços Coelce	Auxiliar de Serviços
+996	Jose Welinton Zacarias de Lima	2302 - Laboratório Perícia	Aux. Operacional I
+1016	Francisco Edson Rodrigues da Costa	2301 - Serviços Coelce	Técnico em Serviços
+1028	Helena Barbara Magalhaes	2300 - Gestão Operacional CE	Gestor de Projetos VII
+1029	Rogerio de Freitas Melo	2304 - Laboratório de	Técnico em Serviços
+1033	Diego Romulo Ferreira Teixeira	2301 - Serviços Coelce	Auxiliar de Serviços
+1034	Jose Adauto de Almeida Neto	2301 - Serviços Coelce	Técnico em Serviços
+1042	Harisson Jose Rodrigues Biserra	2301 - Serviços Coelce	Técnico em Serviços
+1043	Kelvin Viana Pereira	2301 - Serviços Coelce	Técnico em Serviços
+1044	Werlon Arcanjo dos Santos	2302 - Laboratório Perícia	Auxiliar Operacional I
+1046	Jose Edson Dantas Monteiro	2307 - Fiscalização Comercial -	Supervisor Operacional I
+1052	Jose Renato Sousa dos Santos	2302 - Laboratório Perícia	Técnico em Serviços
+1054	Francisco Noberto dos Santos	2307 - Fiscalização Comercial -	Eletricista de Operações
+1059	Luiz Diego Coelho Silva	2304 - Laboratório de	Técnico em Serviços
+1060	Adoralice Guedes Ferreira Nogueira	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI V
+1062	Antonio Carlos de Santiago Lima	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI IX
+1067	Josefa Evilania Galdino da Silva	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI V
+1068	Julio Cesar de Lima	2301 - Serviços Coelce	Técnico em Serviços
+1070	Maria Veronica Silva Campos	2305 - Cálculo de Toi	Coordenador de Projetos IV
+1071	Nilson Santana Lopes	2301 - Serviços Coelce	Auxiliar Operacional I
+1072	Sara Maria Gomes Nobre	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI V
+1075	Raquel Ingred Lima Magalhaes	2301 - Serviços Coelce	Técnico em Serviços
+1079	Marcos Aurelio Silva de Sousa	2301 - Serviços Coelce	Auxiliar Operacional I
+1082	Jose Ribamar do Nascimento Costa	2301 - Serviços Coelce	Auxiliar Operacional I
+1083	Lucas Matheus Soares da Silva	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI V
+1087	Regilane Araujo da Silva	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI I
+1089	David Mauro Muniz	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI I
+1095	Raul Felipe Girao dos Santos Rocha	2301 - Serviços Coelce	Auxiliar de Serviços
+1100	Carlos Mauricio de Barros	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI III
+1121	Nara Nogueira dos Santos Silva	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI I
+1122	Tiago Mendes Menezes	2307 - Fiscalização Comercial -	Eletricista de Operações
+1123	Luciano Lourenco da Silva Filho	2301 - Serviços Coelce	Auxiliar Operacional I
+1124	Aurilio de Brito Soares	2301 - Serviços Coelce	Auxiliar de Serviços
+1131	Francisco Alves Pereira	2305 - Cálculo de Toi	Técnico de TOI I
+1132	Marlison Fernandes Bezerra	2301 - Serviços Coelce	Técnico em Serviços
+1134	Dennys de Lima	2302 - Laboratório Perícia	Técnico em Serviços
+1135	Mariana Silva Abreu	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI I
+1138	Alexandre Lemos dos Santos	2307 - Fiscalização Comercial -	Eletricista de Operações
+1140	Antonio Wilson Vieira Gomes	2307 - Fiscalização Comercial -	Eletricista de Operações
+1141	Cicero Batista da Silva	2307 - Fiscalização Comercial -	Eletricista de Operações
+1142	Eduardo Yves Campos Paz	2307 - Fiscalização Comercial -	Eletricista de Operações
+1143	Francimara Silva Matos	2307 - Fiscalização Comercial -	Auxiliar de Operações Comerciais I
+1144	Francisco Clebio Ferreira Silva	2307 - Fiscalização Comercial -	Eletricista de Operações
+1148	Francisco Roberto Silveira Cavalcante	2307 - Fiscalização Comercial -	Eletricista de Operações
+1149	Janete Pereira da Silva	2307 - Fiscalização Comercial -	Técnico em Operações Comerciais
+1150	Jose Cleilton Lima	2307 - Fiscalização Comercial -	Técnico em Operações Comerciais
+1151	Jose Edilson Gomes	2307 - Fiscalização Comercial -	Eletricista de Operações
+1152	Loide Lourenco da Silva	2307 - Fiscalização Comercial -	Coordenador de Projetos IV
+1153	Marcos Antonio Brito de Araujo	2307 - Fiscalização Comercial -	Supervisor Operacional I
+1155	Giselly de Sousa Oliveira	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI I
+1156	Janaina Rodrigues de Souza	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI I
+1157	Lua Jonathan da Silva Coelho	2305 - Cálculo de Toi	Auxiliar Administrativo de TOI I
+1158	Gardenio Teixeira de Arruda	2302 - Laboratório Perícia	Técnico em Serviços
+1159	Daniel Ferreira de Souza Costa	2301 - Serviços Coelce	Auxiliar Operacional I
+1160	Davi Goncalves da Silva	2302 - Laboratório Perícia	Técnico em Serviços
+1166	Adailton Almeida do Nascimento	2301 - Serviços Coelce	Auxiliar de Serviços
+1168	Francisco Pereira de Sousa	2307 - Fiscalização Comercial -	Técnico em Operações Comerciais
+1171	Nathanael Romulo de Oliveira Ribeiro	2301 - Serviços Coelce	Técnico em Serviços
+1172	Carlos Felipe da Silva Ferreira	2302 - Laboratório Perícia	Aux. Operacional I
+1174	Kaciano Dias Rodrigues	2307 - Fiscalização Comercial -	Eletricista de Operações
+1176	Weslley Rodrigues de Sousa	2003 - Apoio Operacional Ce	Técnico de Seguraça do Trabalho III
+1182	Angelo Márcio Silva de Oliveira	2307 - Fiscalização Comercial -	Eletricista de Operações
+1184	Lucas Eufrasio Pontes	2301 - Serviços Coelce	Auxiliar Operacional I
+1186	Gleiciano Costa Matias	2307 - Fiscalização Comercial -	Técnico em Operações Comerciais
+1188	Larissa Stefanny Rodrigues Colares	2301 - Serviços Coelce	Aprendiz em Ocupações
+1189	Alexandre Araujo Amaral	2307 - Fiscalização Comercial -	Eletricista de Operações
+1192	Francisco Daniel Oliveira Carvalho	2302 - Laboratório Perícia	Aux. Operacional I
+1193	Samuel Nunes Assumpcao	2305 - Cálculo de Toi	Aprendiz em Ocupações
+1196	Antonio Gleilson Lima Martins	2301 - Serviços Coelce	Técnico em Serviços
+1200	Jose Orcetti Magalhaes Pereira	2300 - Gestão Operacional CE	Coordenador de Projetos Sênior V
+1206	Jose Evilasio dos Santos	2003 - Apoio Operacional Ce	Tecnico em Informatica III
+1207	Joao Patricio Ferreira Neto	2302 - Laboratório Perícia	Técnico em Serviços
+1209	Samuel Silva de Lima Filho	2302 - Laboratório Perícia	Aux. Operacional I
+1213	Francisco Tiago Freitas Pinto	2003 - Apoio Operacional Ce	Auxiliar de Apoio Operacional I
+1216	Hericles Allyano de Souza Lima	2301 - Serviços Coelce	Técnico em Serviços
+1217	Marcos Antonio Lopes da Silva	2301 - Serviços Coelce	Técnico em Serviços
+1218	Izaias Marques de Melo	2301 - Serviços Coelce	Auxiliar Operacional I
+1238	Jane Rodrigues Ferreira	2307 - Fiscalização Comercial -	Auxiliar de Serviços
+1239	Felipe Martins Pires	2307 - Fiscalização Comercial -	Técnico em Operações Comerciais
+1254	Herbert Fiuza Chagas	2302 - Laboratório Perícia	Auxiliar Operacional I
+1255	Jean Nobre Damasceno	2302 - Laboratório Perícia	Auxiliar Operacional I
+1256	Brenda Kerly Mourao Teixeira de Matos	2302 - Laboratório Perícia	Auxiliar de Serviços
+1265	Jucie Gomes de Albuquerque	2307 - Fiscalização Comercial -	Eletricista de Operações
+1266	Cicero Lucelio Costa de Oliveira Freire	2003 - Apoio Operacional Ce	Técnico de Segurança do Trabalho
+1272	Ana Beatriz Negreiros Barbosa	2302 - Laboratório Perícia	Auxiliar de Serviços
+1273	Rayane Fernanda da Costa Angelim	2302 - Laboratório Perícia	Auxiliar de Serviços
+1274	Lidia da Silva Facanha	2302 - Laboratório Perícia	Estagiário de Administração
+1276	Carlos Ryan do Nascimento Coutinho	2305 - Cálculo de Toi	Aprendiz em Ocupações
+1277	Cesar Henrique Carneiro de Oliveira	2301 - Serviços Coelce	Auxiliar Operacional I
+1280	Maria Tainara Nobre Teixeira	2301 - Serviços Coelce	Aprendiz em Ocupações
+1286	Patrick Facundo Avelino de Souza	2003 - Apoio Operacional Ce	Assistente de Apoio Operacional I
+1287	Cleia Gdenia da Conceição Nogueira	2307 - Fiscalização Comercial -	Auxiliar de Operações Comerciais I
+1291	Andre Paulino da Silva	2307 - Fiscalização Comercial -	Eletricista de Operações
+1295	Francisco Welldon Paiva Filho	2301 - Serviços Coelce	Auxiliar da Qualidade I
+1299	Ingrid Thayna Barros de Brito	2301 - Serviços Coelce	Auxiliar Operacional I
+1300	Daniel da Silva	2301 - Serviços Coelce	Auxiliar Operacional I
+1301	Romulo Carneiro de Sousa	2302 - Laboratório Perícia	Estagiário de Administração
+1302	Lucas Anderson Dourado de Aguiar	2305 - Cálculo de Toi	Técnico de TOI I

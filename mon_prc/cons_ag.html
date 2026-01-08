@@ -1,0 +1,229 @@
+<script src="js/consulta_viagem.js"></script>
+<div id="main" role="main">
+    <div id="content">
+        <section id="widget-grid" class="">
+            <div class="row">
+                <article class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="jarviswidget well" id="wid-id-3" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+                        <div>
+                            <div class="jarviswidget-editbox">
+
+                            </div>
+                            <div class="widget-body">
+                                <hr class="simple">
+                                <ul id="myTab1" class="nav nav-tabs bordered">
+                                    <li class="active">
+                                        <a href="#s6" id="liPesqVgData" data-toggle="tab">CONSULTA GERAL <span class="badge bg-color-blue txt-color-white"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#s3" id="liPesqEst" data-toggle="tab">CONSULTA POR VEÍCULO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#s4" id="liNf" data-toggle="tab">CONSULTA POR DESTINO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#s5" id="liPrdEtq" data-toggle="tab">VIAGENS FATURADAS</a>
+                                    </li>
+                                    <li>
+                                        <a href="#s1" id="liConsKm" data-toggle="tab">CONSULTA KM</a>
+                                    </li>
+                                </ul>
+                                <div id="myTabContent1" class="tab-content padding-10">
+                                    <div class="tab-pane fade in active" id="s6">
+                                        <article>
+                                            <div>
+                                                <form class="form-inline" method="POST" id="formConsultaViagemData" action="">
+                                                    <div class="form-group">
+                                                        <input type="date" id="dt_vg" name="dt_vg" class="form-control">
+                                                        <input type="submit" class="form-control btn-info" id="btnPesqVgData" value="Pesquisar">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </article>
+                                        <article>
+                                            <div id="retornoVgData"></div>
+                                        </article>
+                                    </div>
+                                    <div class="tab-pane fade" id="s3">
+                                        <article>
+                                            <div>
+                                                <form class="form-inline" method="POST" id="formConsultaEstoque" action="">
+                                                   <div class="form-group">
+                                                    <input type="text" id="cod_prod_est" name="cod_prod_est" class="form-control" aria-describedby="basic-addon2" placeholder="Digite nome ou código SAP">
+                                                    <input type="submit" class="form-control btn-info" id="btnPesqEst" value="Pesquisar">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </article>
+                                    <article id="retornoEst">
+                                        <div id="retornoAg"></div>
+                                        <div id="retModalAg"></div>
+                                    </article>
+                                </div>
+                                <div class="tab-pane fade" id="s4">
+                                    <article>
+                                        <div>
+                                            <form method="POST" class="form-inline" id="formListHistProd" action="">
+                                                <div class="form-group">
+                                                    <input type="btn" class="form-control" aria-describedby="basic-addon2" name="histProd" id="histProd" placeholder="Digite o código SAP do produto" style="text-align: right;">
+                                                    <input type="button" class="btn-info form-control" id="btnFormHistPrd" value="Pesquisar">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div id="retornoHist"></div>
+                                        <div id="retRomaneio"></div>
+                                        <div id="retModal"></div>
+                                    </article>
+                                </div>
+                                <div class="tab-pane fade" id="s5">
+                                    <article>
+                                        <div>
+                                            <form class="form-inline" method="POST" id="formConsultaEstoqueEtq" action="">
+                                                <div class="form-group">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div id="responseEtq" style="display: none"></div>  
+                                        <div id="retornoEtq"></div>
+                                    </article>
+                                </div>
+                                <div class="tab-pane fade" id="s1">
+                                    <article>
+                                        <div>
+                                            <form class="form-inline" method="POST" id="formConsultaEstoqueEtq" action="">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="mes_man" name="mes_man">
+                                                        <option value="0">Selecione o mês</option>
+                                                        <?php while($dados = mysqli_fetch_assoc($result_nf)){?>
+                                                            <option value="<?php echo $dados['mes_man']; ?>" data-ano="<?php echo $dados['ano_man']; ?>"><?php echo $dados['mes_man']."/".$dados['ano_man']; ?></option>
+                                                        <?php }?>
+                                                    </select>
+                                                    <input type="button" class="btn-info form-control" id="btnPesqVgKm" value="Pesquisar">
+                                                    <input type="button" class="btn-primary form-control" id="btnPesqVgKmRes" value="RESUMO POR VEICULO">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div id="retornoVgKm"></div> 
+                                        <div id="retornoModalVgKm"></div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="row">
+            <div id="retModalEntrega">
+            </div>
+        </div>
+    </section>
+</div>
+<div id="retNfTransp"></div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $('#liPesqVgData').on('click', function(){
+            $('#retornoVgData').load('data/expedicao/list_vg_data.php');
+        });
+
+        $('#liRecConf').on('click', function(){
+            $('#retornoConf').load('data/recebimento/list_recebimento_conf.php');
+        });
+
+        $('#liRecEnc').on('click', function(){
+            $('#retornoEnc').load('data/recebimento/list_recebimento_enc.php');
+        });
+
+        $('#liRecAg').on('click', function(){
+            $('#retornoAg').load('data/recebimento/list_recebimento_ag.php');
+        });
+
+        $('#liAg').on('click', function(){
+            $('#retornoJan').load('data/recebimento/list_agenda.php');
+        });
+    });
+</script>
+<script type="text/javascript"> 
+    $(document).ready(function() {
+
+        pageSetUp();
+        var responsiveHelper_dt_basic = undefined;
+        var responsiveHelper_datatable_fixed_column = undefined;
+        var responsiveHelper_datatable_col_reorder = undefined;
+        var responsiveHelper_datatable_tabletools = undefined;
+        
+        var breakpointDefinition = {
+            tablet : 1024,
+            phone : 480
+        };
+        
+        $('#dt_basic').dataTable({
+            "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
+            "t"+
+            "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+            "autoWidth" : true,
+            "oLanguage": {
+                "sSearch": '<!--span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span-->'
+            },
+            "preDrawCallback" : function() {
+                if (!responsiveHelper_dt_basic) {
+                    responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                }
+            },
+            "rowCallback" : function(nRow) {
+                responsiveHelper_dt_basic.createExpandIcon(nRow);
+            },
+            "drawCallback" : function(oSettings) {
+                responsiveHelper_dt_basic.respond();
+            }
+        });
+        var otable = $('#datatable_fixed_column').DataTable({
+            "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6 hidden-xs'f><'col-sm-6 col-xs-12 hidden-xs'<'toolbar'>>r>"+
+            "t"+
+            "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+            "autoWidth" : true,
+            "oLanguage": {
+                "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+            },
+            "preDrawCallback" : function() {
+                if (!responsiveHelper_datatable_fixed_column) {
+                    responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+                }
+            },
+            "rowCallback" : function(nRow) {
+                responsiveHelper_datatable_fixed_column.createExpandIcon(nRow);
+            },
+            "drawCallback" : function(oSettings) {
+                responsiveHelper_datatable_fixed_column.respond();
+            }       
+            
+        });
+        $("#datatable_fixed_column thead th input[type=text]").on( 'keyup change', function () {
+
+            otable
+            .column( $(this).parent().index()+':visible' )
+            .search( this.value )
+            .draw();
+            
+        } );
+    });
+
+</script>
+<script type="text/javascript">    
+    $(document).on('click', '#RepPlvExcel',function(){
+        event.preventDefault();
+        var today = new Date();
+        $("#reportPlv").table2excel({
+            name: "Relatório de viagens",
+            filename: "Relatório de viagens"
+        });
+    });
+</script>

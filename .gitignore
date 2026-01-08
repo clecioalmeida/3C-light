@@ -1,0 +1,40 @@
+# Arquivos binarios e documentos
+*.pdf
+*.PDF
+*.xml
+*.XML
+*.zip
+*.ZIP
+
+# Backup
+backup--WMS_PRD-2026.zip
+*.bak
+*.backup
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+
+# Pastas de uploads/assets com PDFs
+mon_prc/assets/pdf/
+mon_prc/teste/
+
+# Arquivos de dados importados
+WMS_PRD/data/mail/email/importados/
+WMS_PRD/data/mail/email/*.xml
+
+# Arquivos de teste
+WMS_PRD/entrega/xml/gmap/pins.xml
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# Cache
+*.cache
+cache/

@@ -1,0 +1,44 @@
+<div class="modal fade bd-example-modal-lg" id="add_xml" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Inserir arquivo Xml</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline" action="ins_xml.php" id="testeXml" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="category"><p>Selecione os arquivos <strong>XML</strong> a importar.</p></label>
+                                <div class="input-group">
+                                    <input class="btn btn-default" name="arquivos[]" type="file" multiple />
+                                    <input type="hidden" name="cod_rec" id="cod_rec" value=""/>
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default btn-primary" type="submit"
+                                            style="height: 40px">
+                                            <i class="fa fa-check"></i> Enviar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div id="retXml"></div>
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/m_ins_xml.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#add_xml').modal('show');
+    });
+</script>

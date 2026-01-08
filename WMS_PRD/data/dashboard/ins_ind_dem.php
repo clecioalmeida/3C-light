@@ -1,0 +1,69 @@
+<?php
+session_start();    
+?>
+<?php
+
+if(!isset($_SESSION["id"]) || !isset($_SESSION["usuario"])){
+
+	header("Location:../../index.php");
+	exit;
+
+}else{
+
+	$id 		= $_SESSION["id"];
+	$id_oper 	= $_SESSION["cod_cli"];
+}
+?>
+<?php
+date_default_timezone_set('America/Sao_Paulo');
+$date = date("Y-m-d H:i:s");
+
+require_once 'bd_class.php';
+$objDb = new db();
+$link = $objDb->conecta_mysql();
+
+$ds_data 		= $_POST['ds_data'];
+$nr_trans_dep 	= $_POST['nr_trans_dep'];
+$nr_dem_proc 	= $_POST['nr_dem_proc'];
+
+//$ds_data = $ds_mes."-".$ds_ano;
+
+$query_qtde="select id, ds_data from tb_fc_rec_sap where ds_data = '$ds_data'";
+$qtde = mysqli_query($link,$query_qtde);
+
+if(mysqli_num_rows($qtde) > 0){
+	
+	$dados = mysqli_fetch_assoc($qtde);
+
+	$upd_ind="update tb_fc_rec_sap set nr_dem_proc = '$nr_dem_proc', nr_trans_dep = '$nr_trans_dep' where id = '".$dados['id']."'";
+	$etq = mysqli_query($link,$upd_ind);
+
+	if(mysqli_affected_rows($link) > 0){
+
+		echo 'Dados cadastrados.';
+
+	}else{
+
+		echo 'Erro no cadastro.';
+
+	}
+
+}else{
+
+	$ins_etq="insert into tb_fc_rec_sap (ds_data, nr_dem_proc, nr_trans_dep, fl_empresa, usr_create, dt_create) values ('$ds_data', '$nr_dem_proc', '$nr_trans_dep', '$cod_cli', '$id', '$date')";
+	$etq = mysqli_query($link,$ins_etq);
+
+	if(mysqli_affected_rows($link) > 0){
+
+		echo 'Dados cadastrados.';
+
+	}else{
+
+		echo 'Erro no cadastro.';
+
+	}
+
+}
+
+$link->close();
+?>

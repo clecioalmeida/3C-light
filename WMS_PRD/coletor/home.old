@@ -1,0 +1,1702 @@
+<?php
+session_start();    
+?>
+<?php
+
+if(!isset($_SESSION["id"]) || !isset($_SESSION["usuario"])){
+
+	header("Location:../index.php");
+	exit;
+
+}else{
+
+	$id=$_SESSION["id"];
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Argus - Conferência eletrônica</title>
+	<link rel="shortcut icon" href="_assets/img/logoArgus.png">	
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<script src="js/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<style> 
+		input[type="email"]::placeholder {  
+
+			/* Firefox, Chrome, Opera */ 
+			text-align: center; 
+		} 
+		input[type="text"]::placeholder {  
+
+			/* Firefox, Chrome, Opera */ 
+			text-align: left; 
+		} 
+		input[type="tel"]::placeholder {  
+
+			/* Firefox, Chrome, Opera */ 
+			text-align: left; 
+		} 
+		input[type="email"]:-ms-input-placeholder { 
+
+			/* Internet Explorer 10-11 */ 
+			text-align: center; 
+		} 
+		input[type="email"]::-ms-input-placeholder {  
+
+			/* Microsoft Edge */ 
+			text-align: center; 
+		}
+	</style> 
+</head>
+<body>
+	<style type="text/css">
+		.ocupado {
+			background-color: #F08080;
+		}
+
+		.livre {
+			background-color: #7FFFD4;
+		}
+
+		.alerta {
+			background-color: #EEDD82;
+		}
+
+		.finalizado {
+			background-color: #ADD8E6;
+		}
+	</style>
+	<div data-role="page" id="one" class="jqm-demos jqm-home" style="background-color: white;">
+		<div data-role="header" class="jqm-header" style="height: 50px">
+			<h2><img src="_assets/img/logo12.png" alt="Conferência eletrônica" style="width: 100px"></h2>
+			<a href="logout.php" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-power ui-nodisc-icon ui-alt-icon ui-btn-right" id="btnLogoutHome"></a>
+		</div>
+		<div role="main" class="ui-content jqm-content" id="retEntrega" style="padding-top: 1em">
+			<section id="widget-grid" class="">
+				<div class="row">
+					<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="row">
+							<a href="recebimento.php" style="text-decoration: none">
+								<button type="button" class="btn btn-default btn-lg btn-block" style="text-shadow:0">Recebimento</button>
+							</a>
+						</div>
+						<div class="row">
+							<a href="movimento.php" style="text-decoration: none">
+								<button type="button" class="btn btn-default btn-lg btn-block">Movimentação</button>
+							</a>
+						</div>
+						<div class="row">
+							<a href="expede.php" style="text-decoration: none">
+								<button type="button" class="btn btn-default btn-lg btn-block">Expedição</button>
+							</a>
+						</div>
+						<div class="row">
+							<a href="inventario.php" style="text-decoration: none">
+								<button type="button" class="btn btn-default btn-lg btn-block">Inventário</button>
+							</a>
+						</div>
+						<div class="row">
+							<a href="consulta.php" style="text-decoration: none">
+								<button type="button" class="btn btn-default btn-lg btn-block">Consulta</button>
+							</a>
+						</div>
+					</article>
+				</div>
+			</section>
+		</div>
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+			<p>Growup Soluções para logística</p>
+			<p>Copyright 2018 - Growup</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('click', '#btnLogoutHome', function(){
+			event.preventDefault();
+			$.ajax
+			({
+				url:"logout.php",
+				method: "GET",
+				success:function(j)
+				{
+					alert("Saída realizada com sucesso!");
+					window.location.replace("index.php");
+				}
+			});
+		});
+	});
+</script>
+<!--script type="text/javascript">
+	$(document).ready(function(){		
+		$(document).on('change','#id_end',function(event){
+			event.preventDefault();
+			var id_end = $(this).val();   	
+			if($('#id_end').val() == ''){
+				alert("Favor bipar o endereço!");
+			} else {
+
+				$.post("xhr/conf_local_aloc.php",$("#form_conf_aloc").serialize(),
+					function(aloca){
+						if(aloca.info == "0"){
+							$('#id_endereco').val(aloca.id);
+							var retorno = "Rua: "+aloca.rua+" Coluna: "+aloca.col+" Altura: "+aloca.alt;
+							$('#retEnd').html(retorno);
+							$('.aloca').show();
+
+						}else{
+							var retorno = "Atenção:"+btnFinAloca.info;
+							$('#retEnd').html(retorno);
+						}
+					}, "json");
+				return false;
+			}
+		});
+	});
+</script-->	
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('change','#barcode_exp_3c',function(event){
+			event.preventDefault();
+			if($('#barcode_exp_3c').val() == ''){
+				alert("Favor bipar o produto!");
+			} else {
+				$.post("xhr/conf_prd_exp_3c.php",$("#form_conf_exp_on_3c").serialize(),
+					function(data){
+						if(data.info == "0"){
+
+							alert("Produto já conferido.");
+							$('#barcode_exp_3c').val("");
+							$('#barcode_exp_3c').focus();
+
+						}else if(data.info == "3"){
+
+							alert("Produto não faz parte do pedido.");
+							$('#barcode_exp_3c').val("");
+							$('#barcode_exp_3c').focus();
+
+						}else{
+
+							$('#nr_qtde_conf').focus();
+
+						}
+					}, "json");
+			}
+			return false;
+		});
+
+		$(document).on('click','#btnSaveConfExpOnda3c',function(event){
+			event.preventDefault();
+			if($('#barcode_exp_3c').val() == '' || $('#nr_qtde_conf').val() == ''){
+				alert("Produto e quantidade são obrigatórios!");
+			} else {
+				
+				$.post("xhr/conf_expede_cego_on_3c.php",$("#form_conf_exp_on_3c").serialize(),
+					function(data){
+
+						alert(data.text);
+
+						if(data.info == "0"){
+
+							$('#nr_qtde_conf').val("");
+							$('#barcode_exp_3c').val("");
+							$('#barcode_exp_3c').focus();
+							var retorno = data.nr_qtde_conf;
+							$('#retConfExpOn').html(retorno);
+
+						}else{
+
+							$('#nr_qtde_conf').val("");
+							$('#nr_qtde_conf').focus();
+							var retorno = data.nr_qtde_conf;
+							$('#retConfExpOn').html(retorno);
+
+						}
+					}, "json");
+
+			}
+			return false;
+		});
+
+		$(document).on('click','#btnFinConfExpCegoOn3c',function(event){
+			event.preventDefault();
+			var pedido = $(this).val();
+			$.post("xhr/fin_conf_exp_on_3c.php",{pedido:pedido},
+				function(data){
+					var retorno = data.info;
+					$('#retFinConfExpOn3c').html(retorno);
+				}, "json");
+			return false;
+		});
+	});
+</script>	
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('change','#barcode_exp',function(event){
+			event.preventDefault();
+			if($('#barcode_exp').val() == ''){
+				alert("Favor bipar o produto!");
+			} else {
+				$.post("xhr/conf_prd_exp.php",$("#form_conf_exp_on").serialize(),
+					function(data){
+						if(data.info == "0"){
+
+							alert("Produto já conferido.");
+							$('#barcode_exp').val("");
+							$('#barcode_exp').focus();
+
+						}else if(data.info == "3"){
+
+							alert("Produto não faz parte do pedido.");
+							$('#barcode_exp').val("");
+							$('#barcode_exp').focus();
+
+						}else if(data.info == "2"){
+
+							alert("Produto pendente de separação.");
+							$('#barcode_exp').val("");
+							$('#barcode_exp').focus();
+
+						}else{
+
+							$('#nr_qtde_conf').focus();
+
+						}
+					}, "json");
+			}
+			return false;
+		});
+
+		$(document).on('click','#btnSaveConfExpOnda',function(event){
+			event.preventDefault();
+			if($('#barcode_exp').val() == '' || $('#nr_qtde_conf').val() == ''){
+				alert("Produto e quantidade são obrigatórios!");
+			} else {
+				
+				$.post("xhr/conf_expede_cego_on.php",$("#form_conf_exp_on").serialize(),
+					function(data){
+
+						alert(data.text);
+
+						if(data.info == "0"){
+
+							$('#nr_qtde_conf').val("");
+							$('#barcode_exp').val("");
+							$('#barcode_exp').focus();
+							var retorno = data.nr_qtde_conf;
+							$('#retConfExpOn').html(retorno);
+
+						}else{
+
+							$('#nr_qtde_conf').val("");
+							$('#nr_qtde_conf').focus();
+							var retorno = data.nr_qtde_conf;
+							$('#retConfExpOn').html(retorno);
+
+						}
+					}, "json");
+
+			}
+			return false;
+		});
+
+		$(document).on('click','#btnCleanConfExpOnda',function(event){
+			event.preventDefault();
+
+			$('#nr_qtde_conf').val("");
+			$('#barcode_exp').val("");
+			$('#barcode_exp').focus();
+			$('#retConfExpOn').html("");
+
+		});
+
+		$(document).on('click','#btnFinConfExpCegoOn',function(event){
+			event.preventDefault();
+			var pedido = $(this).val();
+			$.post("xhr/fin_conf_exp_on.php",{pedido:pedido},
+				function(data){
+					var retorno = data.info;
+					$('#retFinConfExpOn').html(retorno);
+				}, "json");
+			return false;
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('change','#barcode',function(event){
+			event.preventDefault();
+			if($('#barcode').val() == ''){
+				alert("Favor bipar o volume!");
+			} else {
+				$.post("xhr/ins_conf.php",$("#form_conf_rec").serialize(),
+					function(data){
+						for(var i=0;i < data.length;i++){
+							if(data[i].info == "0"){
+								$('#barcode').val("");
+								$('#barcode').focus();
+								var retorno = "Conferido:"+data[i].total_conf;
+								$('#TotalConferido').text(retorno);
+								$('#retConfRec').text("");
+
+							}else{
+								$('#barcode').val("");
+								$('#barcode').focus();
+								var retorno = "Atenção:"+data[i].total_conf;
+								$('#retConfRec').text(retorno);
+							}
+						}
+					}, "json");
+			}
+			return false;
+		});
+
+		$(document).on('change','#ins_qtde_ns',function(event){
+			event.preventDefault();
+			if($('#barcode_ns').val() == ''){
+				alert("Favor bipar o volume!");
+			} else {
+				$('#retNSOr').hide();
+				$.ajax({
+					url:"xhr/ins_conf_ns.php",
+					method: "POST",
+					dataType:'json',
+					data: $('#form_cad_ns').serialize(),
+					success:function(j){
+						$('#ins_qtde_ns').val();
+						for(var i=0;i < j.length;i++){
+							var total = j[i].total_conf;
+							$('#retNSOr').show();
+							$('#retNSOr').html(total);
+						}
+					}
+				});
+			}
+			return false;
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('change','#ins_qtde_conf',function(event){
+			event.preventDefault();
+			$('#TotalConferido').hide();
+			if($('#barcodeQtde').val() == '' || $('#ins_qtde_conf').val() == ''){
+				alert("Favor bipar o volume!");
+			} else {
+				$.ajax({
+					url:"xhr/ins_conf_qtd.php",
+					method: "POST",
+					dataType:'json',
+					data: $('#form_conf_qtd').serialize(),
+					success:function(j){
+						$('#form_conf_qtd')[0].reset();
+						for(var i=0;i < j.length;i++){
+							var total = "Conferido:"+j[i].total_conf;
+							$('#retConfRecQtde').html(total);
+						}
+					}
+				});
+			}
+			$('#TotalConferido').show();
+			return false;
+		});
+
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){	
+		$(document).on('click','#btnFinConfRec',function(event){
+			event.preventDefault();
+			var cod_rec = $(this).val();
+			$.ajax({
+				url:"xhr/fin_conf_rec.php",
+				method: "POST",
+				dataType:'json',
+				data:{cod_rec:cod_rec},
+				success:function(j){
+					for(var i=0;i < j.length;i++){
+						var retorno = "Atenção:"+j[i].fin_conf
+						$('#retFinConfRec').html(retorno);
+					}
+				}
+			});
+		});
+
+		$(document).on('click','#btnFinAloca',function(event){
+			event.preventDefault();
+			var id_aloc = $(this).val();
+			$.ajax({
+				url:"xhr/fin_conf_aloc.php",
+				method: "POST",
+				dataType:'json',
+				data:{id_aloc:id_aloc},
+				success:function(j){
+					for(var i=0;i < j.length;i++){
+						var retorno = "Atenção:"+j[i].fin_conf
+						$('#retFinConfAloc').html(retorno);
+					}
+				}
+			});
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){	
+		$(document).on('change','#iniAloc',function(aloc){
+			event.preventDefault();
+			var id_aloca = $(this).val();
+			$.get("conf_local_aloc.php"); 	
+		});
+		
+		$(document).on('change','#id_end',function(event){
+			event.preventDefault();
+			var id_end = $(this).val();   	
+			if($('#id_end').val() == ''){
+				alert("Favor bipar o endereço!");
+			} else {
+
+				$.post("xhr/conf_local_aloc.php",$("#form_conf_aloc").serialize(),
+					function(data){
+						if(data.info == "0"){
+							$('#id_endereco').val(data.id);
+							var retorno = "Rua: "+data.rua+" Coluna: "+data.col+" Altura: "+data.alt;
+							$('#retEnd').text(retorno);
+							$('.aloca').show();
+
+						}else{
+							var retorno = "Atenção:"+data.info;
+							$('#retEnd').text(retorno);
+						}
+					}, "json");
+				return false;
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$(document).on('change','#barcodeAloc',function(event){
+			event.preventDefault();
+			var barcode_aloc = $(this).val();
+			if($('#barcodeAloc').val() == ''){
+				alert("Favor bipar o volume!");
+			} else {
+				$.post("xhr/conf_picking_aloc.php",$("#form_conf_prd_aloca").serialize(),
+					function(data){
+						if(data.info == "0"){
+							$('#barcodeAloc').val("");
+							$('#barcodeAloc').focus();
+							var total_conf = "Conferido:"+data.count;
+							$('#TotalConferido').html(total_conf);
+
+						}else{
+							$('#barcodeAloc').val("");
+							$('#barcodeAloc').focus();
+							var retorno = "Atenção:"+data.info;
+							$('#retEnd').html(retorno);
+						}
+					}, "json");
+				
+				return false;
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$(document).on('change','#local',function(event){
+			event.preventDefault();
+			$('#retExpEnd').hide();
+			var pedido = $('#nrPedConf').val();    		
+			var prd = $('#nrProdConf').val();    	
+			var end = $('#nrEndConf').val();    	
+			var local = $('#local').val();
+			var galpao_conf = $('#nrGlpConf').val();    	
+			var rua_conf = $('#nrRuaConf').val();    	
+			var col_conf = $('#nrColConf').val();    	
+			var alt_conf = $('#nrAltConf').val();    	
+			if($('#local').val() == ''){
+				alert("Favor bipar o endereço!");
+			} else {
+				$.ajax
+				({
+					url:"xhr/conf_local.php",
+					method: "POST",
+					dataType: 'json',
+					data:{pedido:pedido,local:local,end:end,prd:prd,galpao_conf:galpao_conf,rua_conf:rua_conf,col_conf:col_conf,alt_conf:alt_conf},
+					success:function(j){
+
+						for(var i=0;i < j.length;i++){
+							var confirma = j[i].info
+							if(confirma == 1){
+								$('.produto').show();
+								var total = "Conferido:"+j[i].total;
+								$('#TotalConferido').html(total);
+							}else{
+								var retorno = "Atenção:"+j[i].info
+								$('#retExpEnd').show();
+								$('#retExpEnd').html(retorno);
+							}
+						}
+					}
+				});
+				return false;
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$(document).on('change','#barcodeConf',function(event){
+			event.preventDefault();
+			if($('#barcodeConf').val() == ''){
+				alert("Favor bipar o volume!");
+			} else {
+				if(prd == barcode){
+					$.ajax
+					({
+						url:"xhr/conf_picking.php",
+						method: "POST",
+						dataType:'json',
+						data:{prd:prd,rua:rua,col:col,alt:alt,qtd:qtd,galpao:galpao,barcode:barcode,pedido:pedido},
+						success:function(j){
+							$('#form_conf_prod')[0].reset();
+							$('#barcodeConf').focus();
+							for(var i=0;i < j.length;i++){
+								var total_conf = "Conferido:"+j[i].info;
+								$('#TotalConferido').html(total);
+							}
+						}
+					});
+					$.post("xhr/conf_picking.php",$("#form_conf_end").serialize(),
+						function(data){
+							if(data.info == "0"){
+								$('#barcodeConf').val("");
+								$('#barcodeConf').focus();
+								var total_conf = "Conferido:"+data.count;
+								$('#TotalConferido').html(total);
+
+							}else{
+								var retorno = "Atenção:"+data.info;
+								$('#retExpEnd1').html(retorno);
+							}
+						}, "json");
+					return false;
+
+				}else{
+
+					alert("Favor bipar o produto selecionado!");
+
+				}
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var qtde = new Array();
+		$('.qtde').each( function( i,v ){
+			var $this = $( this )
+			qtde[i] = $this.attr('data-qtde');
+		});
+		var conf = new Array();
+		$('.total').each( function( i,v ){
+			var total_Conf = $( this )
+			conf[i] = total_Conf.attr('data-conf');
+
+			if(qtde[i] == conf[i]){
+				console.log(conf[i]);
+				total_Conf.addClass('livre');
+			}else{
+				total_Conf.addClass('ocupado');
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#retExpEnd1').hide();
+		$('#retExpEnd2').hide();		
+		$(document).on('click','#btnFinConfPed',function(event){
+			event.preventDefault();
+			var pedido = $(this).val();
+			$.ajax({
+				url:"xhr/fin_conf_pedido.php",
+				method: "POST",
+				dataType:'json',
+				data:{pedido:pedido},
+				success:function(j){
+					for(var i=0;i < j.length;i++){
+						var info = j[i].info;
+						if(info == 1){
+							$('#retExpEnd1').show();
+							$('#retExpEnd1').html("Pedido finalizado com sucesso!");
+						}else{
+							$('#retExpEnd2').show();
+							$('#retExpEnd2').html(info);
+
+						}
+					}
+				}
+			});
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$(document).on('change','#localCego',function(event){
+			event.preventDefault();
+			$('#retExpEnd').hide();
+			var pedido = $('#nrPedConf').val();    		
+			var prd = $('#nrProdConf').val();    	
+			var end = $('#nrEndConf').val();    	
+			var local = $('#localCego').val();
+			var galpao_conf = $('#nrGlpConf').val();    	
+			var rua_conf = $('#nrRuaConf').val();    	
+			var col_conf = $('#nrColConf').val();    	
+			var alt_conf = $('#nrAltConf').val(); 
+			$.ajax
+			({
+				url:"xhr/conf_local_cego.php",
+				method: "POST",
+				dataType: 'json',
+				data:{pedido:pedido,local:local,end:end,prd:prd,galpao_conf:galpao_conf,rua_conf:rua_conf,col_conf:col_conf,alt_conf:alt_conf},
+				success:function(j){
+
+					for(var i=0;i < j.length;i++){
+						var confirma = j[i].info
+						if(confirma == 1){
+							$('.produto').show();
+							var total = "Conferido:"+j[i].total;
+							$('#TotalConferido').html(total);
+						}else{
+							var retorno = "Atenção:"+j[i].info
+							$('#retExpEnd').show();
+							$('#retExpEnd').html(retorno);
+						}
+					}
+				}
+			});
+			return false;
+		});
+
+		$(document).on('change','#barcodeCego',function(event){
+			event.preventDefault();
+			var prd = $('#nrProdConf').val();
+			var barcode = $('#barcodeCego').val();
+			if($('#barcodeCego').val() == ''){
+				alert("Favor bipar o volume!");
+			} else {
+				if(prd == barcode){                  
+					$('.qtde').show();
+				}else{
+
+					alert("Favor bipar o produto selecionado!");
+
+				}
+			}
+		});
+
+		$(document).on('click','#btnSaveConfProd',function(event){
+			$('#btnSaveConfProd').prop("disabled", true);
+			event.preventDefault();
+			var prd = $('#nrProdConf').val();
+			var galpao = $('#nrGlpConf').val(); 
+			var rua = $('#nrRuaConf').val();
+			var col = $('#nrColConf').val();
+			var alt = $('#nrAltConf').val();    	
+			var local = $('#localCego').val();
+			var barcode = $('#barcodeCego').val();
+			var end = $('#nrEndConf').val();
+			var pedido = $('#nrPedConf').val();
+			var qtd = $('#nrQtdConf').val();
+			var nr_qtde_conf = $('#nr_qtde_conf').val();
+			var cod_estoque = $('#cod_estoque').val();
+			var cod_col = $('#cod_col').val();
+			console.log($('#localCego').val());
+			if($('#barcodeCego').val() == '' || $('#nr_qtde_conf').val() == '' || $('#nr_qtde_conf').val() == '0'){
+				alert("Favor inserir o produto e a quantidade!");
+			}else{
+
+				if(prd == barcode){
+
+					$.post("xhr/conf_picking_cego.php",{prd:prd,rua:rua,col:col,alt:alt,qtd:qtd,galpao:galpao,barcode:barcode,pedido:pedido,nr_qtde_conf:nr_qtde_conf,cod_estoque:cod_estoque,local:local,cod_col:cod_col},
+						function(data){
+							var retorno = data.info;
+							$('#TotalConferido').html(retorno);
+						}, "json");
+					return false;
+
+				}else{
+
+					alert("Favor bipar o produto selecionado!");
+
+				}
+			}
+			$('#btnSaveConfProd').prop("disabled", false);
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#retExpEnd1').hide();
+		$('#retExpEnd2').hide();		
+		$(document).on('click','#btnFinConfPedCego',function(event){
+			event.preventDefault();
+			var pedido = $(this).val();
+			$.ajax({
+				url:"xhr/fin_conf_cego.php",
+				method: "POST",
+				dataType:'json',
+				data:{pedido:pedido},
+				success:function(j){
+					for(var i=0;i < j.length;i++){
+						var info = j[i].info;
+						if(info == 1){
+							$('#retExpEnd1').show();
+							$('#retExpEnd1').html("Pedido finalizado com sucesso!");
+						}else{
+							$('#retExpEnd2').show();
+							$('#retExpEnd2').html(info);
+						}
+					}
+				}
+			});
+		});
+
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('change','#barcodeExpSp',function(event){
+			event.preventDefault();
+			var barcode = $('#barcodeExpSp').val();
+			var pedido = $('#nrPedExp').val();
+			if($('#barcodeExpSp').val() == ''){
+				alert("Favor bipar o volume!");
+			} else {
+				$.ajax
+				({
+					url:"xhr/conf_exp.php",
+					method: "POST",
+					dataType:'json',
+					data:{barcode:barcode,pedido:pedido},
+					success:function(j){
+						$('#form_conf')[0].reset();
+						$('#barcodeExpSp').focus();
+						for(var i=0;i < j.length;i++){
+							var total_conf = "Conferido:"+j[i].info;
+							$('#TotalConferido').html(total_conf);
+						}
+					}
+				});
+				return false;
+			}
+		});
+	});
+</script>
+<!--script type="text/javascript">
+	$(document).ready(function(){
+		$('#retExpEnd1').hide();
+		$('#retExpEnd2').hide();
+		$(document).on('click','#btnFinConfExp',function(event){
+			event.preventDefault();
+			var pedido = $(this).val();
+			$.ajax({
+				url:"xhr/fin_conf_exp.php",
+				method: "POST",
+				dataType:'json',
+				data:{pedido:pedido},
+				success:function(j){
+					for(var i=0;i < j.length;i++){
+						var info = j[i].info;
+						if(info == 1){
+							$('#retExpEnd1').show();
+							$('#retExpEnd1').html("Conferência finalizada com sucesso!");
+
+						}else{
+							$('#retExpEnd2').show();
+							$('#retExpEnd2').html(info);
+
+						}
+					}
+				}
+			});
+		});
+		return false;
+	});
+</script-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('change','#consLocal',function(event){			
+			$('#barcodeConsPrd').focus();
+		});
+
+		$(document).on('change','#barcodeConsPrd',function(event){
+			event.preventDefault();
+			var consLocal = $('#consLocal').val();
+			var barcodeConsPrd = $('#barcodeConsPrd').val();
+			if($('#consLocal').val() == ''){
+				alert("Favor bipar o endereço!");
+			} else {
+				$.ajax
+				({
+					url:"xhr/conf_local_consulta.php",
+					method: "POST",
+					dataType:'json',
+					data:{barcodeConsPrd:barcodeConsPrd,consLocal:consLocal},
+					success:function(j){
+						for(var i=0;i < j.length;i++){
+							var total_conf = "<p>Código:"+j[i].cod_prod_cliente+"</p><p>Produto:"+j[i].nm_produto+"</p><p>Saldo:"+j[i].saldo+"</p>";
+							$('#retConsPrd').html(total_conf);
+						}
+					}
+				});
+				return false;
+			}
+		});
+
+		$(document).on('click','#btnConsPrd',function(event){
+			event.preventDefault();
+			var barcodeConsLocPrd = $('#barcodeConsLocPrd').val();
+			$.post("xhr/conf_local_prd_consulta.php",{barcodeConsLocPrd:barcodeConsLocPrd},
+				function(j){						
+					for(var i=0;i < j.length;i++){
+						var retorno = j[i].retorno;
+						$('#retConsPrd').append(retorno);
+					}
+				}, "json");
+			return false;
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('change', '#id_inv', function(){
+			if( $(this).val() ) {
+				$('#id_local').hide();
+				$.getJSON('consulta_local.php?search=',{id_inv: $(this).val(),ajax: 'true'}, function(j){
+					var options = '<option value="">Escolha o local</option>';
+					for (var i = 0; i < j.length; i++) {
+						options += '<option value="' + j[i].id_galpao + '">'  + j[i].nome + '</option>';
+					}
+					$('#id_local').html(options).show();
+				});
+			} else {
+				$('#id_local').html('<option value="">Escolha o local</option>');
+			}
+		});
+
+		$(document).on('change', '#id_local', function(){
+			if( $(this).val() ) {
+				$('#id_rua').hide();
+				$.getJSON('consulta_rua.php?search=',{id_local: $(this).val(),id_inv: $('#id_inv').val(),ajax: 'true'}, function(j){
+					var options = '<option value="">Escolha a rua</option>';
+					for (var i = 0; i < j.length; i++) {
+						options += '<option value="' + j[i].id_rua + '">'  + j[i].id_rua + '</option>';
+					}
+					$('#id_rua').html(options).show();
+				});
+			} else {
+				$('#id_rua').html('<option value="">Escolha a rua</option>');
+			}
+		});
+
+		$(document).on('change', '#id_rua', function(){
+			if( $(this).val() ) {
+				$('#id_coluna').hide();
+				$.getJSON('consulta_coluna.php?search=',{id_local: $('#id_local').val(),id_inv: $('#id_inv').val(),id_rua: $(this).val(),ajax: 'true'}, function(j){
+					var options = '<option value="">Escolha a coluna</option>';
+					for (var i = 0; i < j.length; i++) {
+						options += '<option value="' + j[i].id_coluna + '">'  + j[i].id_coluna + '</option>';
+					}
+					$('#id_coluna').html(options).show();
+				});
+			} else {
+				$('#id_coluna').html('<option value="">Escolha a coluna</option>');
+			}
+		});
+
+		$(document).on('change', '#id_coluna', function(){
+			if( $(this).val() ) {
+				$('#id_altura').hide();
+				$.getJSON('consulta_altura.php?search=',{id_local: $('#id_local').val(),id_inv: $('#id_inv').val(),id_rua: $('#id_rua').val(),id_coluna: $(this).val(),ajax: 'true'}, function(j){
+					var options = '<option value="">Escolha a altura</option>';
+					for (var i = 0; i < j.length; i++) {
+						options += '<option value="' + j[i].id_altura + '">'  + j[i].id_altura + '</option>';
+					}
+					$('#id_altura').html(options).show();
+				});
+			} else {
+				$('#id_altura').html('<option value="">Escolha a altura</option>');
+			}
+		});
+	});
+</script>	
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$(document).on('change','#localInv',function(event){
+			event.preventDefault();
+			$('#retExpEnd').hide();  	
+			var local = $('#localInv').val(); 	
+			if($('#local').val() == ''){
+				alert("Favor bipar o endereço!");
+			} else {
+				$.ajax
+				({
+					url:"xhr/conf_local_inv.php",
+					method: "POST",
+					dataType: 'json',
+					data:{local:local},
+					success:function(j){
+						for(var i=0;i < j.length;i++){
+							if(j[i].info == "0"){
+								if($('#cont_1').val() == 0){
+
+									$('.contP').show();
+									console.log("cont1");
+
+								}else if($('#cont_1').val() > 0 && $('#cont_2').val() == 0){
+
+									$('.contS').show();
+									console.log("cont2");
+
+								}else if($('#cont_2').val() != 0 && $('#cont_3').val() == 0){
+
+									$('.contT').show();
+									console.log("cont3");
+
+								}else{
+
+									$('#TotalConferido').html("Todos os itens foram conferidos");
+								}
+							}else{
+								$('#TotalConferido').html("Endereço inválido.");
+							}
+						}
+					}
+				});
+				return false;
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on('change','#barcodeConfInvP',function(event){
+			event.preventDefault();
+			var cod_estoque = $('#cod_estoque').val();
+			var produto = $('#barcodeConfInvP').val();
+			var id_tar = $('#id_tar').val();
+			$.ajax
+			({
+				url:"xhr/ins_conf_inv_p.php",
+				method: "POST",
+				dataType:'json',
+				data:{cod_estoque:cod_estoque,produto:produto,id_tar:id_tar},
+				success:function(j){
+					for(var i=0;i < j.length;i++){
+						var total_conf = "Conferido:"+j[i].info;
+						$('#TotalConferidoP').html(total_conf);
+					}
+				}
+			});
+			return false;
+		});
+/*
+		$(document).on('click', '#btnInitConfInv', function(){
+			$('#btnInitConfInv').prop("disabled", true);
+			var id_inv = $('#id_inv').val();
+			var id_local = $('#id_local').val();
+			var id_rua = $('#id_rua').val();
+			var id_coluna = $('#id_coluna').val();
+			var id_altura = $('#id_altura').val();
+			$.ajax
+			({
+				url:"consulta_status_conf.php",
+				method:"POST",
+				dataType:'json',
+				data:{
+					id_tar:id_tar,
+					ds_embalagem:ds_embalagem
+				},
+				success:function(j)
+				{
+					for (var i = 0; i < j.length; i++) {
+						if(j[i].info == 0){
+							alert("Embalagem alterada com sucesso!");
+						}else{
+							alert("Erro no cadastro!");
+						}
+					}
+				}
+			});
+			$('#btnInitConfInv').prop("disabled", false);
+			return false;
+		});*/
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var status = new Array();
+		$('.btnConf').each( function( i,v ){
+			var status_Conf = $( this ).val()
+			status[i] = status_Conf;
+
+			if(status[i] == 'P'){
+				console.log(status[i]);
+				$('.btnConf').prop("disabled", true);
+			}else{
+				$('.btnConf').prop("disabled", false);
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$(document).on('change','#localInv',function(event){
+			event.preventDefault();
+			$('#retExpEnd').hide();	
+			var local = $('#localInv').val();	
+			if($('#localInv').val() == ''){
+				alert("Favor bipar o endereço!");
+			} else {
+				$.post("xhr/conf_local_inv.php",$("#form_conf_inv").serialize(),
+					function(data){
+						if(data.info == "0"){
+							$('.inventario').show();
+
+						}else{
+							var retorno = "Atenção:"+data.info;
+							$('#retInv').html(retorno);
+						}
+					}, "json");
+				return false;
+			}
+		});
+		
+		$(document).on('change','#localInv',function(event){
+			event.preventDefault();
+			$('#retExpEnd').hide();	
+			var local = $('#localInv').val();	
+			if($('#localInv').val() == ''){
+				alert("Favor bipar o endereço!");
+			} else {
+				$.post("xhr/conf_local_inv.php",$("#form_conf_inv").serialize(),
+					function(data){
+						if(data.info == "0"){
+							$('.inventario').show();
+						}else{
+							var retorno = "Atenção:"+data.info;
+							$('#localInv').html(retorno);
+						}
+					}, "json");
+				return false;
+			}
+		});
+
+		$(document).on('change','#barcodeInvCego',function(event){
+			event.preventDefault();
+			var barcode = $('#barcodeInvCego').val();
+			if($('#barcodeInvCego').val() == ''){
+				alert("Favor bipar o volume!");
+			}else{          
+				$('.qtdeInv').show();
+			}
+		});		
+
+		$('#barcodeInvTransf').bind("enterKey",function(e){
+			$('.qtdeInvTransf').show();
+		});
+		$('#barcodeInvTransf').keyup(function(e){
+			if(e.keyCode == 13)
+			{
+				$(this).trigger("enterKey");
+			}
+		});
+
+		/*$(document).on('change','#barcodeInvTransf',function(event){
+			event.preventDefault();
+			var barcode = $('#barcodeInvCego').val();
+			if($('#barcodeInvCego').val() == ''){
+				alert("Favor digitar o código do produto!");
+			}else{ 
+				$('.qtdeInvTransf').show();
+			}
+			return false;
+		});*/
+
+		$(document).on('click','#btnSaveConfProdInv',function(event){
+			event.preventDefault();
+			var barcode = $('#barcodeInvCego').val();
+			var localInv = $('#localInv').val();
+			var nr_vol_inv = $('#nr_vol_inv').val();
+			var nr_qtde_inv = $('#nr_qtde_inv').val();
+			if($('#barcodeInvCego').val() == ''){
+
+				alert("Favor bipar o volume!");
+
+			}else{
+
+				$.post("xhr/conf_picking_inv.php",{barcode: barcode,localInv:localInv,nr_qtde_inv:nr_qtde_inv,nr_vol_inv:nr_vol_inv},
+					function(data){
+						var retorno = "Atenção:"+data.info;
+						$('#retInvQtde').html(retorno);
+					}, "json");
+				return false;
+				
+			}
+		});
+
+		$(document).on('click','#btnSaveConfProdInvTransf',function(event){
+			event.preventDefault();
+			var barcode = $('#barcodeInvTransf').val();
+			var localInv = $('#localInv').val();
+			var nr_vol_inv = $('#nr_vol_inv').val();
+			var nr_qtde_inv = $('#nr_qtde_inv').val();
+			var nrInvConf = $('#nrInvConf').val();
+			var id_galpao = $('#id_galpao').val();
+			if($('#barcodeInvTransf').val() == ''){
+
+				alert("Favor bipar o volume!");
+
+			}else{
+
+				$.post("xhr/conf_picking_inv_transf.php",{barcode: barcode,localInv:localInv,nr_qtde_inv:nr_qtde_inv,nr_vol_inv:nr_vol_inv,nrInvConf:nrInvConf,id_galpao:id_galpao},
+					function(data){
+						var retorno = "Atenção:"+data.info;
+						$('#retInvQtdeTransf').html(retorno);
+						$('#barcodeInvTransf').val("");
+						$('#localInv').val("");
+						$('#nr_vol_inv').val("");
+						$('#nr_qtde_inv').val("");
+					}, "json");
+				return false;
+				
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#retExpEnd1').hide();
+		$('#retExpEnd2').hide();	
+
+		$(document).on('click','#btnFinConfExpCego',function(event){
+			event.preventDefault();
+			var pedido = $(this).val();
+			$.post("xhr/fin_conf_exp.php",{pedido:pedido},
+				function(data){
+					var retorno = data.info;
+					$('#retExpEnd2').show();
+					$('#retExpEnd2').html(retorno);
+				}, "json");
+			return false;
+		});
+
+		$(document).on('click','#btnSaveConfExpCego',function(event){
+			event.preventDefault();
+			$('#btnSaveConfExpCego').prop("disabled", true);
+			var barcode = $('#barcodeExpCego').val();
+			var pedido = $(this).val();
+			var nr_qtde_conf = $('#nr_qtde_conf').val();
+			if($('#barcodeExpCego').val() == ''){
+				alert("Favor digitar o volume!");
+				$('#btnSaveConfExpCego').prop("disabled", false);
+			}else{
+
+				$.post("xhr/conf_expede_cego.php",{barcode:barcode,pedido:pedido,nr_qtde_conf:nr_qtde_conf},
+					function(data){
+						var retorno = data.info;
+						$('#TotalConferido').html(retorno);
+					}, "json");
+				return false;
+				$('#btnSaveConfExpCego').prop("disabled", false);
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$(document).on('click','#btnSaveConfProdInvAg1',function(event){
+			event.preventDefault();
+			var barcode = $('#barcodeInvAg1').val();
+			var localInv = $('#localInvAg1').val();
+			var nr_vol_inv = $('#nr_vol_inv').val();
+			var nr_qtde_inv = $('#nr_qtde_inv').val();
+			var nrInvConf = $('#nrInvConf').val();
+			if($('#barcodeInvAg1').val() == ''){
+
+				alert("Favor bipar o volume!");
+
+			}else{
+
+				$.post("xhr/conf_picking_inv_ag1.php",{barcode: barcode,localInv:localInv,nr_qtde_inv:nr_qtde_inv,nr_vol_inv:nr_vol_inv,nrInvConf:nrInvConf},
+					function(data){
+						var retorno = "Atenção:"+data.info;
+						$('#retInvQtdeAg').html(retorno);
+						$('#barcodeInvAg1').val("");
+						$('#localInvAg1').val("");
+						$('#nr_vol_inv').val("");
+						$('#nr_qtde_inv').val("");
+					}, "json");
+				return false;
+				
+			}
+		});
+
+		$(document).on('click','#btnSaveConfProdInvAg2',function(event){
+			event.preventDefault();
+			var barcode = $('#barcodeInvAg2').val();
+			var localInv = $('#localInvAg2').val();
+			var nr_vol_inv = $('#nr_vol_inv').val();
+			var nr_qtde_inv = $('#nr_qtde_inv').val();
+			var nrInvConf = $('#nrInvConf').val();
+			if($('#barcodeInvAg2').val() == ''){
+
+				alert("Favor bipar o volume!");
+
+			}else{
+
+				$.post("xhr/conf_picking_inv_ag2.php",{barcode: barcode,localInv:localInv,nr_qtde_inv:nr_qtde_inv,nr_vol_inv:nr_vol_inv,nrInvConf:nrInvConf},
+					function(data){
+						var retorno = "Atenção:"+data.info;
+						$('#retInvQtdeAg2').html(retorno);
+						$('#barcodeInvAg2').val("");
+						$('#localInvAg2').val("");
+						$('#nr_vol_inv').val("");
+						$('#nr_qtde_inv').val("");
+					}, "json");
+				return false;
+				
+			}
+		});
+
+		$(document).on('click','#btnConsPP',function(event){
+			event.preventDefault();
+			var barcodeConsPP = $('#barcodeConsLocPp').val();
+			$.post("xhr/conf_pp_consulta.php",{barcodeConsPP:barcodeConsPP},
+				function(j){						
+					for(var i=0;i < j.length;i++){
+						if(j[i].info == "2"){
+
+							var retorno_pp = "Produto não encontrado.";
+
+						}else{
+
+							var retorno_pp = "<p><strong>Código:"+j[i].cod_prod_cliente+"</strong></p><p>Produto:"+j[i].nm_produto+"</p><p>Saldo:"+j[i].saldo+"</p>";
+
+						}
+						$('#retConsPp').append(retorno_pp);
+					}
+				}, "json");
+			return false;
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$(document).on('change','#barcodeSerial',function(event){
+			event.preventDefault();
+			var prd = $('#nrProdConf').val();
+			var barcode = $('#barcodeSerial').val();
+			if($('#barcodeSerial').val() == ''){
+				alert("Favor bipar o volume!");
+			}else{
+				if(prd == barcode){                  
+					
+					$('#nr_serial').focus();
+
+				}else{
+
+					alert("O produto não faz parte do pedido!");           
+					$('#barcodeSerial').val("").focus();
+
+				}
+			}
+		});
+
+		$(document).on('change','#nr_serial',function(event){
+			event.preventDefault();
+			$('#retConfSerial').hide();
+			var barcode = $('#barcodeSerial').val();
+			var nr_serial = $('#nr_serial').val();
+			var nr_ped = $('#nrPedConf').val();
+			var ds_end = $('#localCego').val();
+			var ds_tot = $('#nr_total_ped').val();
+
+			if($('#nr_serial').val() == ''){
+
+				alert("Favor bipar o número de série!");
+
+			}else{
+
+				$.post("xhr/consulta_nserie.php",{barcode:barcode,nr_serial:nr_serial,nr_ped:nr_ped,ds_end:ds_end,ds_tot:ds_tot},function(data){
+
+					var retorno = data.info;
+					var text = data.text;
+					var conf = data.conf;
+					var saldo = data.saldo;
+					$('#retConfSerial').html(text).show();
+					$('#TotalSelecionado').html(conf);
+					$('#tot_ped').html(saldo);
+					$('#list_serial').prepend(retorno);
+					$('#nr_serial').val("");
+					$('#nr_serial').focus();
+
+				}, "json");
+
+			}
+		});
+
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$(document).on('change','#barcodeSerial',function(event){
+			event.preventDefault();
+
+			var barcode = $('#barcodeSerial').val();
+
+			if($('#barcodeSerial').val() == ''){
+
+				alert("Favor bipar o volume!");
+
+			}else{
+
+				$.post("xhr/consulta_produto.php",{barcode:barcode},function(data){
+
+					var retorno 	= data.info;
+					$('#retPrd').html(retorno);
+					$('#nr_serial').val("");
+					$('#localCegoSerial').focus();
+
+				}, "json");
+			}
+		});
+
+		$(document).on('change','#nr_serial',function(event){
+			event.preventDefault();
+			$('#retConfSerial').hide();
+			var barcode = $('#barcodeSerial').val();
+			var nr_serial = $('#nr_serial').val();
+			var nr_ped = $('#nrPedConf').val();
+			var ds_end = $('#localCegoSerial').val();
+
+			if($('#nr_serial').val() == ''){
+
+				alert("Favor bipar o número de série!");
+
+			}else{
+
+				$.post("xhr/consulta_nserie.php",{barcode:barcode,nr_serial:nr_serial,nr_ped:nr_ped,ds_end:ds_end},function(data){
+
+					var retorno 	= data.info;
+					var text 		= data.text;
+					var conf 		= data.conf;
+					var saldo 		= data.saldo;
+					$('#retConfSerial').html(text).show();
+					$('#TotalSelecionado').html(conf);
+					$('#tot_ped').html(saldo);
+					$('#list_serial').prepend(retorno);
+					$('#nr_serial').val("");
+					$('#nr_serial').focus();
+
+				}, "json");
+
+			}
+		});
+
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$(document).on('change','#barcodeSerialRange',function(event){
+			event.preventDefault();
+
+			var barcode = $('#barcodeSerialRange').val();
+
+			if($('#barcodeSerialRange').val() == ''){
+
+				alert("Favor bipar o Produto!");
+
+			}else{
+
+				$.post("xhr/consulta_produto.php",{barcode:barcode},function(data){
+
+					var retorno 	= data.info;
+					$('#retPrd').html(retorno);
+					$('#nr_serial_ini').val("");
+					$('#localCegoSerial').focus();
+
+				}, "json");
+			}
+		});
+
+		$(document).on('change','#nr_serial_fim',function(event){
+			event.preventDefault();
+			$('#retConfSerial').hide();
+			var barcode 		= $('#barcodeSerialRange').val();
+			var nr_serial_ini 	= $('#nr_serial_ini').val();
+			var nr_serial_fim 	= $('#nr_serial_fim').val();
+			var nr_ped 			= $('#nrPedConf').val();
+			var ds_end 			= $('#localCegoSerialRange').val();
+
+			if($('#nr_serial_ini').val() == '' || $('#nr_serial_fim').val() == ''){
+
+				alert("Favor bipar o range do número de série!");
+
+			}else{
+
+				$.post("xhr/consulta_range_nserie.php",{barcode:barcode,nr_serial_ini:nr_serial_ini,nr_serial_fim:nr_serial_fim,nr_ped:nr_ped,ds_end:ds_end},function(j){
+
+					for(var i=0;i < j.length;i++){
+
+						var retorno = j[i].info;
+						var text = j[i].text;
+						var conf = j[i].conf;
+						var saldo = j[i].saldo;
+						$('#retConfSerial').html(text).show();
+						$('#TotalSelecionado').html(conf);
+						$('#tot_ped').html(saldo);
+						$('#list_serial').prepend(retorno);
+						$('#nr_serial_ini').val("");
+						$('#nr_serial_fim').val("");
+						$('#nr_serial_ini').focus();
+
+					}
+
+				}, "json");
+
+			}
+		});
+
+		$(document).on('click','#btnSaveRangeSerial',function(event){
+			event.preventDefault();
+			$('#btnSaveRangeSerial').prop("disabled", true);
+			$('#retConfSerial').hide();
+			var barcode 		= $('#barcodeSerialRange').val();
+			var nr_serial_ini 	= $('#nr_serial_ini').val();
+			var nr_serial_fim 	= $('#nr_serial_fim').val();
+			var nr_ped 			= $('#nrPedConf').val();
+			var ds_end 			= $('#localCegoSerialRange').val();
+
+			if($('#nr_serial_ini').val() == '' || $('#nr_serial_fim').val() == ''){
+
+				alert("Favor bipar o range do número de série!");
+
+			}else{
+
+				$.post("xhr/consulta_range_nserie.php",{barcode:barcode,nr_serial_ini:nr_serial_ini,nr_serial_fim:nr_serial_fim,nr_ped:nr_ped,ds_end:ds_end},function(j){
+					
+					for(var i=0;i < j.length;i++){
+
+						var retorno = j[i].info;
+						var text = j[i].text;
+						var conf = j[i].conf;
+						var saldo = j[i].saldo;
+						$('#retConfSerial').html(text).show();
+						$('#TotalSelecionado').html(conf);
+						$('#tot_ped').html(saldo);
+						$('#list_serial').prepend(retorno);
+						$('#nr_serial_ini').val("");
+						$('#nr_serial_fim').val("");
+						$('#nr_serial_ini').focus();
+
+					}
+
+				}, "json");
+
+			}
+			$('#btnSaveRangeSerial').prop("disabled", false);
+		});
+
+		$(document).on('click','#btnFinRangeSerial',function(event){
+			event.preventDefault();
+			$('#btnSaveRangeSerial').prop("disabled", true);
+			$('#retConfSerial').hide();
+			var nr_ped = $('#nrPedConf').val();
+			var ds_end = $('#localCegoSerialRange').val();
+
+			$.post("xhr/fin_reg_serial.php",{nr_ped:nr_ped,ds_end:ds_end},function(j){
+
+				for(var i=0;i < j.length;i++){
+
+					var retorno = j[i].info;
+					var text = j[i].text;
+					$('#retConfSerial').html(text).show();
+					$('#list_serial').prepend(retorno);
+
+				}
+
+			}, "json");
+
+			$('#btnFinRangeSerial').prop("disabled", false);
+		});
+
+		$(document).on('click','#btnSaveSerial',function(event){
+			event.preventDefault();
+			$('#retConfSerial').hide();
+			var barcode 	= $('#barcodeSerial').val();
+			var nr_serial 	= $('#nr_serial').val();
+			var nr_ped 		= $('#nrPedConf').val();
+			var ds_end 		= $('#localCegoSerial').val();
+
+			if($('#nr_serial').val() == ''){
+
+				alert("Favor bipar o número de série!");
+
+			}else{
+
+				$.post("xhr/consulta_nserie.php",{barcode:barcode,nr_serial:nr_serial,nr_ped:nr_ped,ds_end:ds_end},function(data){
+
+					var retorno 	= data.info;
+					var text 		= data.text;
+					var conf 		= data.conf;
+					var saldo 		= data.saldo;
+					$('#retConfSerial').html(text).show();
+					$('#TotalSelecionado').html(conf);
+					$('#tot_ped').html(saldo);
+					$('#list_serial').prepend(retorno);
+					$('#nr_serial').val("");
+					$('#nr_serial').focus();
+
+				}, "json");
+
+			}
+		});
+
+		$(document).on('click','#btnFinSerial',function(event){
+			event.preventDefault();
+			$('#btnFinSerial').prop("disabled", true);
+			$('#retConfSerial').hide();
+			var nr_ped = $('#nrPedConf').val();
+			var ds_end = $('#localCegoSerial').val();
+
+			$.post("xhr/fin_reg_serial.php",{nr_ped:nr_ped,ds_end:ds_end},function(j){
+
+				for(var i=0;i < j.length;i++){
+
+					var retorno = j[i].info;
+					var text = j[i].text;
+					$('#retConfSerial').html(text).show();
+					$('#list_serial').prepend(retorno);
+
+				}
+
+			}, "json");
+
+			$('#btnFinSerial').prop("disabled", false);
+		});
+
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#retExpEnd1').hide();
+		$('#retExpEnd2').hide();		
+		$(document).on('click','#btnFinConfPedCegoSerial',function(event){
+			event.preventDefault();
+			if(confirm("Confirma a finalização do pedido? Não será possivel incluir novos produtos após confirmação.")){
+				var pedido = $(this).val();
+				$.post("xhr/consulta_separacao_serial.php",{pedido:pedido},function(j){
+
+					if(j.info == 1){
+
+						$.post("xhr/fin_conf_cego_serial.php",{pedido:pedido},function(k){
+							var info = k.info;
+							if(info == 1){
+								$('#retExpEnd1').show();
+								$('#retExpEnd1').html("Pedido finalizado com sucesso!");
+							}else{
+								$('#retExpEnd2').show();
+								$('#retExpEnd2').html(info);
+							}
+						}, "json");
+
+					}else{
+
+						$('#retExpEnd2').show();
+						$('#retExpEnd2').html(info);
+
+					}
+
+				}, "json");
+
+			}
+
+		});	
+
+		$(document).on('change','#localCegoSerial',function(event){
+			event.preventDefault();
+
+			$('#retExpEnd').hide();
+
+			var local = $('#localCegoSerial').val();  	
+			var produto = $('#barcodeSerial').val();
+
+			$.post("xhr/conf_local_cego_serial.php",{local:local,produto:produto},function(j){
+
+				if(j.info == 1){
+
+					var retorno = "Atenção:"+j.saldo;
+					$('#retExpEnd').show();
+					$('#retExpEnd').html(retorno);
+
+				}else{
+
+					var retorno = "Atenção:"+j.info;
+					$('#retExpEnd').show();
+					$('#retExpEnd').html(retorno);
+
+				}
+
+			}, "json");
+
+			return false;
+		});
+
+		$(document).on('change','#localCegoSerialRange',function(event){
+			event.preventDefault();
+
+			$('#retExpEnd').hide();
+
+			var local = $('#localCegoSerialRange').val();  	
+			var produto = $('#barcodeSerialRange').val();
+
+			$.post("xhr/conf_local_cego_serial.php",{local:local,produto:produto},function(j){
+
+				if(j.info == 1){
+
+					var retorno = "Atenção:"+j.saldo;
+					$('#retExpEnd').show();
+					$('#retExpEnd').html(retorno);
+
+				}else{
+
+					var retorno = "Atenção:"+j.info;
+					$('#retExpEnd').show();
+					$('#retExpEnd').html(retorno);
+
+				}
+
+			}, "json");
+
+			return false;
+		});
+	});
+</script>
+</body>
+</html>

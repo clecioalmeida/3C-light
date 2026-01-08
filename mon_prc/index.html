@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en" class="smart-style-0">
+
+<head>
+    <title>ARGUS-Monitoramento logístico</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,500,700">
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" media="screen, print" href="assets/vendors/vendors.bundle.css">
+    <link rel="stylesheet" media="screen, print" href="assets/app/app.bundle.css">
+    <link rel="stylesheet" type="text/css" href="assets/pages/login.css">
+    <style type="text/css">
+        .intro {
+            display: table;
+            width: 100%;
+            height: 100vh;
+            padding: 100px 0;
+            color: white;
+            background: url('img/background_wms2.png') no-repeat bottom center;
+            background-position: 30% 45%;
+            background-size: cover;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body class=" publicHeader-active animated fadeInDown smart-style-0 intro">
+
+    <!-- BEGIN .sa-wrapper -->
+    <div class="sa-wrapper">
+        <!--header id="header" class="publicheader">
+            <div class="logo-group">
+                <div>
+                    <img src="img/logo2.png" class="pull-left display-image" alt="" style="width:180px; margin-top: 10px">
+                </div>
+                <div>
+                    <img src="img/logo12.PNG" class="pull-left display-image" alt="" style="width:180px; margin-top: 17px;border-radius:10px 10px 10px 10px">
+                </div>
+            </div>
+
+            <span class="extr-page-header-space">
+                <span class="hidden-mobile hiddex-xs">Need an account?</span>
+                <a href="register.html" class="btn sa-btn-danger">Create account</a>
+            </span>
+        </header-->
+        <div class="sa-page-body">
+
+
+
+
+            <!-- BEGIN .sa-content-wrapper -->
+            <div class="sa-content-wrapper">
+
+
+
+                <div class="sa-content">
+
+                    <div class="main" role="main">
+
+                        <!-- MAIN CONTENT -->
+                        <div id="content" class="container padding-top-10">
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+                                    <h1 class="text-blue login-header-big"><strong>ARGUS - MONITORAMENTO LOGÍTISCO</strong></h1>
+                                    <div class="clearfix">
+                                        <div class="hero">
+                                            <div class="pull-left">
+                                                <div>
+                                                    <img src="assets/img/logo2.png" class="pull-left display-image"
+                                                        alt="" style="width:180px; margin-top: 10px">
+
+                                                    <img src="assets/img/logo12.PNG" class="pull-left display-image"
+                                                        alt=""
+                                                        style="width:180px; margin-top: 17px;border-radius:10px 10px 10px 10px">
+                                                </div>
+                                            </div>
+
+                                            <!--img src="assets/img/demo/iphoneview.png" class="pull-right display-image"
+                                                alt="" style="width:210px"-->
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                            <!--h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
+                                            <p>
+                                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                            <h5 class="about-heading">Not just your average template!</h5>
+                                            <p>
+                                                Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                                                tempore, cum soluta nobis est eligendi voluptatem accusantium!
+                                            </p-->
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-12 col-lg-4">
+                                    <div class="well no-padding">
+                                        <form action="index.html" id="login-form" class="smart-form client-form">
+                                            <header>
+                                                Acesso
+                                            </header>
+                                            <fieldset>
+                                                <section>
+                                                    <h3 class="bg-orange" id="retErro" style="display: none;color:white;text-align: center;"></h3>
+                                                </section>
+                                                <section>
+                                                    <label class="label">E-mail</label>
+                                                    <label class="input mb-3"> <i class="icon-append fa fa-user"></i>
+                                                        <input type="email" name="email">
+                                                        <b class="tooltip tooltip-top-right"><i
+                                                                class="fa fa-user txt-color-teal"></i> Por favor digite
+                                                            o e-mail cadastrado</b></label>
+                                                </section>
+                                                <section>
+                                                    <label class="label">Senha</label>
+                                                    <label class="input mb-1"> <i class="icon-append fa fa-lock"></i>
+                                                        <input type="password" name="password">
+                                                        <b class="tooltip tooltip-top-right"><i
+                                                                class="fa fa-lock txt-color-teal"></i> Digite sua
+                                                            senha</b> </label>
+                                                </section>
+                                                <section>
+                                                    <footer>
+                                                        <button type="submit" class="btn btn-success" id="btnConsOper"
+                                                            style="width: 100px">
+                                                            Serviços
+                                                        </button>
+                                                    </footer>
+                                                </section>
+                                                <section>
+                                                    <label class="input"> <i class="icon-append fa fa-gear"></i>
+                                                        <select class="form-control" id="SelServDisp" name="oper"
+                                                            required="true">
+                                                            <option></option>
+                                                        </select>
+                                                        <b class="tooltip tooltip-top-right"><i
+                                                                class="fa fa-gear txt-color-teal"></i></b>
+                                                    </label>
+                                                    <div class="note">
+                                                    </div>
+                                                </section>
+                                            </fieldset>
+                                            <footer>
+                                                <button type="submit" class="btn sa-btn-primary" id="btnLogApp">
+                                                    Entrar
+                                                </button>
+                                            </footer>
+                                        </form>
+                                    </div>
+                                    <!--h5 class="text-center"> - Or sign in using -</h5>
+                                    <ul class="list-inline text-center">
+                                        <li>
+                                            <a href="javascript:void(0);" class="btn sa-btn-primary btn-circle"><i
+                                                    class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="btn sa-btn-info btn-circle"><i
+                                                    class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="btn sa-btn-warning btn-circle"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END .sa-content-wrapper -->
+        </div>
+    </div>
+    <!-- END .sa-wrapper -->
+    <script src="assets/vendors/vendors.bundle.js"></script>
+    <script src="assets/app/app.bundle.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/user.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+          $("#fade").fadeIn(3000);
+
+      });
+  </script>
+    <script>
+        $(function () {
+            $('#menu1').metisMenu();
+        });
+    </script>
+</body>
+</html>

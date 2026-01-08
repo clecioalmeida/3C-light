@@ -1,0 +1,3 @@
+Material	Texto breve material	Quantidade	Montante em MI	Doc.material	Item doc.material	Centro	Depósito	Tipo de movimento	Data de lançamento	Pedido	Qtd.  UM registro	Item	Data de entrada	Data do documento	Txt.tipo movimento	Nº reserva	Diagrama de rede	Nome do usuário
+999883	SUCATA Fe BATIDO MISTO E CHAPARIA SOLTA	-16.400	-157,99	490011271	1	11	015	905	03/01/2023		-16.400	0	03/01/2023	03/01/2023	SM para Alienação	0		2256196
+999992	SUCATA FRAGMENTOS DE MADEIRA	-5.360	-53,39	490021690	3	11	015	905	05/01/2023		-5.360	0	05/01/2023	05/01/2023	SM para Alienação	0		2256196

@@ -1,0 +1,37 @@
+<div class="modal fade bd-example-modal-lg" id="pesq_fornecedor" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Consultar fornecedor</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="display projects-table table table-striped table-bordered table-hover"
+                            cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Fornecedor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ListFor">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/pesquisa_for.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#pesq_fornecedor').modal('show');
+    });
+</script>

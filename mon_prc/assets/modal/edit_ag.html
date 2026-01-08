@@ -1,0 +1,146 @@
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+            <form class="col-12" id="formUpdAg">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="category" id="ds_agenda">Data agendada</label>
+                            <select class="form-control" id="dt_agenda" name="dt_agenda">
+                            </select>
+                            <input id="cod_rec" name="cod_rec" type="hidden" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="hr_agenda" id="ds_hora">Hora agendada</label>
+                            <select class="form-control" id="hr_agenda" name="hr_agenda">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="nm_for"> Fornecedor</label>
+                            <div class="input-group">
+                                <input class="form-control" id="nm_for" name="nm_for" type="text" value="">
+                                <input class="form-control" id="id_for" name="id_for" type="hidden" value="">
+                                <div class="input-group-append">
+                                    <button class="btn btn-default" type="button" id="pesq_for">Pesquisar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ds_ped"> Pedidos</label>
+                            <textarea class="form-control" placeholder="" rows="3" required="true" id="ds_ped"
+                                name="ds_ped"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="ds_mail"> E-mail do solicitante</label>
+                            <input type="text" class="form-control" name="ds_mail" id="ds_mail" placeholder=""
+                                required="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mr-1">
+                            <label for="nr_peso"> Peso previsto</label>
+                            <input type="text" class="form-control" name="nr_peso" id="nr_peso" value="" placeholder=""
+                                required="">
+                        </div>
+                        <div class="form-group mr-1">
+                            <label for="nr_volume"> Volume previsto</label>
+                            <input type="text" class="form-control" name="nr_volume" id="nr_volume" value=""
+                                placeholder="" required="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mr-1">
+                            <label for="tp_vol"> Tipo de volume</label>
+                            <select class="form-control" name="tp_vol" id="tp_vol">
+                                <option value="UNIDADE">UNIDADE</option>
+                                <option value="CAIXAS">CAIXAS</option>
+                                <option value="METRO">METRO</option>
+                                <option value="QUILO">QUILO</option>
+                                <option value="PALLET">PALLET</option>
+                                <option value="PEÇA">PEÇA</option>
+                                <option value="BOBINA">BOBINA</option>
+                                <option value="POSTE">POSTE</option>
+                                <option value="TRANSFORMADOR">TRANSFORMADOR</option>
+                            </select>
+                        </div>
+                        <div class="form-group mr-1">
+                            <label for="tp_veic" id="ds_veic">Veículo selecionado</label>
+                            <div class="input-group">
+                                <select class="form-control" name="tp_veic" id="tp_veic"></select>
+                                <div class="input-group-append">
+                                    <button class="btn btn-default" type="button" id="pesq_veic">Consultar</button>
+                                </div>
+                            </div>
+                            <section>
+                                <p><strong>IMPORTANTE:</strong> Selecionar um tipo de veículo diferente do que
+                                    será
+                                    usado no agendamento poderá causar o não recebimento no dia agendado.</p>
+                            </section>
+                            <div class="form-group mr-1">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="nm_trans"> Transportador</label>
+                            <input type="text" class="form-control" name="nm_trans" id="nm_trans" placeholder=""
+                                required="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ds_mot"> Motorista</label>
+                            <input type="text" class="form-control" name="ds_mot" id="ds_mot" placeholder=""
+                                required="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ds_placa"> Placa</label>
+                            <input type="text" class="form-control" name="ds_placa" id="ds_placa" placeholder=""
+                                required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="ds_obs"> Observações importantes</label>
+                            <textarea class="form-control" name="ds_obs" id="ds_obs" placeholder="" rows="3"
+                                required="true"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-12" style="text-align: right;">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default" id="cancEdit" style="width: 100px;">
+                                Cancelar
+                            </button>
+                            <button type="button" class="btn sa-btn-success" id="btnSaveUpdAg" style="width: 100px;">
+                                Salvar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<script src="assets/js/upd_ag.js"></script>

@@ -1,0 +1,42 @@
+<div class="modal fade bd-example-modal-lg" id="recusa_ag" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="ModalrecAg"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formRecAg">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="ds_rec"> Motivo</label>
+                                <input class="form-control" id="cod_rec" name="cod_rec" type="hidden">
+                                <textarea class="form-control" placeholder="" rows="3" required="true" id="ds_rec"
+                                    name="ds_rec"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div id="retXml"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Cancelar
+                </button>
+                <button type="button" class="btn sa-btn-success" id="btnSaveRecAg" value="">
+                    Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/rec_ag.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#recusa_ag').modal('show');
+    });
+</script>

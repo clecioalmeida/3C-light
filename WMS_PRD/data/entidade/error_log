@@ -1,0 +1,40 @@
+[04-May-2021 21:17:55 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): No route to host in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/bd_class.php on line 20
+[04-May-2021 21:17:55 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/bd_class.php on line 23
+[04-May-2021 21:17:55 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 30
+[04-May-2021 21:17:55 UTC] PHP Warning:  mysqli_affected_rows() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 34
+[04-May-2021 21:17:55 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 59
+[04-May-2021 21:17:55 UTC] PHP Warning:  mysqli_affected_rows() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 61
+[04-May-2021 21:17:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php:107
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 107
+[04-May-2021 21:19:47 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): No route to host in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/bd_class.php on line 20
+[04-May-2021 21:19:47 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/bd_class.php on line 23
+[04-May-2021 21:19:47 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 30
+[04-May-2021 21:19:47 UTC] PHP Warning:  mysqli_affected_rows() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 34
+[04-May-2021 21:19:47 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 59
+[04-May-2021 21:19:47 UTC] PHP Warning:  mysqli_affected_rows() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 61
+[04-May-2021 21:19:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php:107
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 107
+[04-May-2021 21:22:57 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): No route to host in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/bd_class.php on line 20
+[04-May-2021 21:22:57 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/bd_class.php on line 23
+[04-May-2021 21:22:57 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 30
+[04-May-2021 21:22:57 UTC] PHP Warning:  mysqli_affected_rows() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 34
+[04-May-2021 21:22:57 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 59
+[04-May-2021 21:22:57 UTC] PHP Warning:  mysqli_affected_rows() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 61
+[04-May-2021 21:22:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php:107
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 107
+[04-May-2021 21:25:01 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): No route to host in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/bd_class.php on line 20
+[04-May-2021 21:25:01 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/bd_class.php on line 23
+[04-May-2021 21:25:01 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 30
+[04-May-2021 21:25:01 UTC] PHP Warning:  mysqli_affected_rows() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 34
+[04-May-2021 21:25:01 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 59
+[04-May-2021 21:25:01 UTC] PHP Warning:  mysqli_affected_rows() expects parameter 1 to be mysqli, boolean given in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 61
+[04-May-2021 21:25:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on boolean in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php:107
+Stack trace:
+#0 {main}
+  thrown in /home/u478097083/public_html/3crj/WMS_PRD/data/entidade/ins_fornecedor.php on line 107

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmplPlus.min.js"></script>
+    <script id="TabelaJson" type="text/x-jquery-tmpl"-->
+</head>
+
+<body>
+    <fieldset>
+        <form id="form" action="" method="post">
+            Nome:      <input type="text" id="usuario" name="usuario"><br>
+            Senha: <input type="text" id="senha" name="senha"><br>
+            <input id="submit" type="button" name="enviar" value="submit">
+            <input id="token" type="button" name="token" value="token">
+        </form><br><br>
+    </fieldset>
+    <div id="retorno">Teste</div>
+             
+    <!--fieldset>
+        <form id="form" action="" method="post">
+            Nome:      <input type="text" id="Edtfirstname" name="Edtfirstname" value="${firstname}"><br>
+            Sobrenome: <input type="text" id="Edtlastname" name="Edtlastname" value="${lastname}"><br>
+            <input id="submit" type="button" name="enviar" value="submit">
+        </form>
+    </fieldset-->
+    <input id="consultar" type="button" name="consultar" value="consultar">
+    <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
+                                                            <thead> 
+                                                                <tr>
+                                                                    <th> id </th>
+                                                                    <th> nome </th>
+                                                                    <th> sobrenome </th>
+                                                                    <th> editar </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                
+                                                            </tbody>
+                                                        </table>
+    <div class="modal fade" id="editar" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    
+    <table id="tabela">
+        <tbody>
+            <tr class="odd gradeX" id="dados1">
+                <td class="id" id="id" contenteditable="true" style="width: 10px">123</td>
+                <td class="id" id="firstname" contenteditable="true" style="width: 10px">99</td>
+                <td id="lastname" contenteditable="true" style="width: 10px">TESTE</td>
+                <td id="estado" contenteditable="true" style="width: 10px">1</td>
+                <td style="width: 10px">
+                    <form method="put" id="formEdita" action="">
+                        <input type="submit" id="editaUser" class="btn btn-default btn-xs" value="Editar">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        
+    </script>
+    <!--script type="text/javascript">
+        $(document).ready(function() {
+            $.ajax({
+                url: "http://pegasus.ehcode42.net.br:8080/api/v1/users"
+            }).then(function(data) {
+               $('#id').append(data.id);
+               $('#firstname').append(data.firstname);
+               $('#lastname').append(data.lastname);
+            });
+        });
+    </script-->
+    <!--script type="text/javascript">
+        $(document).ready(function() {
+            $('table tr').each(function(){
+                var name = $(this).find('.teste').html();
+
+                if(name > 100){
+                    alert(name);
+
+                    $('table td.teste').css('backgroundColor', 'red');
+
+                }
+
+                
+
+            });
+
+        });
+    </script-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tabela tbody tr td.id').each(function(){
+                if($(this).text() >= 100){
+                    $(this).css("backgroundColor","red")
+                }else{
+                    $(this).css("backgroundColor","green")
+                }                
+
+            })
+
+        });
+    </script>
+    <!--script type="text/javascript">
+        $(document).ready(function() {
+            var linha = document.getElementsByClassName('teste');
+            var colunas = linha.getElementsByTagName('td');
+
+            for (i=0;i<colunas.length;i++)
+            {
+                 alert("conteudo da coluna"+i+" ->"+colunas[i].firstChild.nodeValue);
+            }
+
+        });
+    </script-->
+    <!--script type="text/javascript">
+        function checkCols ()
+        {
+            var linha = document.getElementById("dados");
+            var colunas = linha.getElementsByTagName('td');
+            
+            for (i=0;i<colunas.length;i++)
+            {
+            console.log("conteudo da coluna"+i+" ->"+colunas[i].firstChild.nodeValue);
+            }
+        }
+    </script-->
+    <script>
+        $(document).ready(function(){
+  /*
+            $(document).on('click', '#submit', function(){
+                    $.getJSON('https://growupsti.ehcode42.net.br/login?',{usuario: $('#usuario').val(), senha: $('#senha').val(), ajax: 'true'}, function(j){
+                        for (var i = 0; i < j.length; i++) {
+                            options = j[i].token;
+                        }   
+                        $('#retorno').html(options);
+                    });
+            });
+
+            $(document).on('click', '#submit', function(){
+            	event.preventDefault();
+                var usuario = $('#usuario').val();
+                var senha = $('#senha').val();
+                $.getJSON('pegasus.ehcode42.net.br:8080/login',{usuario: $('#usuario').val(), senha: $('#senha').val(), ajax: 'true'}, function(j){
+                        //var options = '<p>Token:</p>'; 
+                        for (var i = 0; i < j.length; i++) {
+                            options = '<p>Token:' + j[i].token + '</p>';                            
+                        }
+                        console.log(options);
+                        //$('#retorno').html(options).show();
+
+                    });
+            });
+
+            $(document).on('click', '#token', function(){
+                var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiZXhwIjoxNTEzNDY5NTExLCJuYW1lIjoiSm_Do28gTmluZ3XDqW0ifQ.qYLbfNSKYYpidWSh8qGhlBczwtgghwUSP5NM7q2qzY4";
+                //var senha = $('#senha').val();
+                $.ajax({
+                    url: 'https://growupsti.ehcode42.net.br/restricted', 
+                    type : "GET", 
+                    dataType : 'json', 
+                    data : {token:token},
+                }).done(function(json){
+                    $.each(json, function(i, token){
+                        token=token.token;
+                    });
+                    
+                        console.log(token);
+                });
+            });
+*/
+            $(document).on('click', '#submit', function(){
+                $('#retorno').hide();
+                var usuario = $('#usuario').val();
+                var senha = $('#senha').val();
+                $.ajax({
+                    url: 'http://pegasus.ehcode42.net.br:8080/login', 
+                    type: "POST", 
+                    dataType: 'json', 
+                    data : {usuario:usuario,senha:senha},
+                    success:function(j)
+                    {
+                        var options =  j[i].token;
+
+                       for (var i = 0; i < j.length; i++) {
+                            
+                            var token = '<input type="text" class="form-control" id="retToken" value="' + j[i].token + '">';
+                            console.log(j[i].token);                                                  
+                        }
+                        $('#retorno').html(token).show();
+                        console.log(options);    
+                    }
+                })
+            });
+/*
+            $(document).on('click', '#cod_destinatario', function(){
+            if( $(this).val() ) {
+                $('#cnpjDest').hide();
+                $.getJSON('data/movimento/consulta_cliente.php?search=',{cod_cliente_pedido: $(this).val(),ajax: 'true'}, function(j){
+                    for (var i = 0; i < j.length; i++) {
+                        var options = '<input type="text" class="form-control" id="id_cnpj_dest" value="' + j[i].nr_cnpj_cpf + '">';
+                    }   
+                    $('#cnpjDest').html(options).show();
+                 });
+            } else {
+                 $('#cnpjDest').html('<input type="text" class="form-control" id="id_cnpj_dest" value="">');
+            }
+        });
+
+            $("#consultar").on('click', function(){
+                 $.getJSON('http://pegasus.ehcode42.net.br:8080/api/v1/users', function(data){
+                    $('#TabelaJson').template('modelo');
+                    $.tmpl('modelo', data).appendTo('#dt_basic');
+                    var firstname = (json.firstname);
+                    var lastname = (json.lastname);
+
+                 });
+
+            $("#editaUser").on('click', function(){
+                var edtNome = $('td')
+                
+
+            });
+
+            });
+*/
+        });
+
+    </script>
+
+</body>
+
+</html>

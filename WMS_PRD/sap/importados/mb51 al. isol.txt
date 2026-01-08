@@ -1,0 +1,2 @@
+Material	Texto breve material	Quantidade	Montante em MI	Doc.material	Item doc.material	Centro	Depósito	Tipo de movimento	Data de lançamento	Pedido	Qtd.  UM registro	Item	Data de entrada	Data do documento	Txt.tipo movimento	Nº reserva	Diagrama de rede	Nome do usuário
+999818	SUCATA CABO ALUMINIO ISOLADO C/ ALMA ACO	-15.440	-512,46	490456872	1	11	015	905	25/05/2023		-15.440	0	25/05/2023	25/05/2023	SM para Alienação	0		2256196
